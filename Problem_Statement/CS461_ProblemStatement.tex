@@ -1,0 +1,91 @@
+\documentclass[letterpaper,10pt,titlepage,draftclsnofoot,onecolumn,utf8,latin1]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage[margin=.75in]{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\def\name{Charles Siebert, Branden Berlin, Yipeng "Roger" Song}
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {cs461 ``Senior Capstone - Fall 2016'' capstone},
+  pdftitle = {CS 461 Problem Statement},
+  pdfsubject = {Capstone Problem Statement},
+  pdfpagemode = UseNone
+}
+
+\title{CS444-Project1}
+
+\author{\name}
+\date{October 2016}
+
+
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{4cm}
+{\scshape\LARGE Optimizing Virtual Reality and Augmented Reality on Mobile Web Applications } \\
+	{\scshape\Large CS461 - Fall 2016 \par}
+	\vspace{.5cm}
+	\name \par
+    {\large \today \par} 
+    
+	\vspace*{1cm}
+	
+\begin{abstract}
+The technology of Virtual Reality (VR) currently is not cost effective to the today's market, as the cost of high-end setups required makes it difficult to afford. Browser developers are focusing primarily on high-end specialized hardware for VR on mobile, and are generally ignoring Augmented Reality (AR). Therefore, doing AR on the web allows far more developers to enter the field. To accomplish this, we are working on a project called “Mobile Web App”, which focuses on profiling and identifying performance bottlenecks in 3D web content and camera acquisition/usage on mobile devices. We will file issues in the open source projects for Chrome, Firefox, A-Frame and Three.js to determine and identify those bottlenecks. We hope to accomplish this by reporting the challenges and opportunities for performant VR/AR applications, and write a blog post detailing the project results and their best-practices.
+\end{abstract}
+
+\end{titlepage}
+
+\section*{Problem Definition}
+\begin{singlespace}
+Currently, the best means of experiencing Virtual Reality (VR) and Augmented Reality (AR) are through expensive platforms such as the Oculus Rift, HTC Vive and Sony Morpheus which are affordable to only a small percentage of the world. The VR platforms are also heavily reliant on a strong desktop computer to be able to handle the processing power required for those devices. However, with the majority of the world’s computers being people’s smart phones, and other similar mobile devices. There is a large market for this technology, as the smart phone or mobile device market heavily dominates the computing industry, it just isn't developed fully yet. Although phones are not as powerful as a desktop computer, there is still the potential for everyone to be able to experience VR and AR. The ability to experience those realities on a phone are already viable possibilities through web browsers such Mozilla Firefox, Google Chrome; Safari is minimal and buggy at best. Our project is to find the issues that are currently plaguing the VR and AR experience, and to optimize the performance and quality of these applications on mobile devices without sacrificing heavy battery use or overloading the hardware.
+
+\section*{Proposed Solution}
+To solve the issues currently plaguing VR and AR, we are going to utilize A-Frame, Three.js, and web-based platforms. We will be working on these platforms with access to other developers, who are working on the similar platforms, to discuss and determine the bugs, and optimization issues that are plagued on mobile devices regarding VR and AR. Through these tools, we are able to build, break, and debug the current VR and AR experiences to not only better understand the issues, but so we can find a solution to them as well. To reduce the amount of hardware discrepancies between builds and devices, we will be using similar hardware equipment while building and developing our solutions.\\
+
+Throughout the project, we will be creating and constantly updating a GitHub repository as our form of version control. In the GitHub repository, we will be issue tracking, uploading design documents, created applications, and posting a weekly blog post detailing our work and progress for the week. Our deliverable product from this project include documents detailing our challenges and results, and defining the best-practices we found in working with VR and AR applications on these mobile devices. We will be working with project teams from the previously mentioned open source projects to help resolve their issues, and file issues for iOS and Android problems relating to the A-Frame and Three.js platforms. In addition we will also be writing a blog post for Mozilla about the results we found. 
+
+\section*{Performance Metrics}
+As we develop programs on these web-stack applications, we will be documenting our practices, the performance of the application, and how the application varies from others. With having equivalent equipment, we isolate the possibility of performance changes to being software specific, rather than dealing with analyzing the information across multiple devices. This will help us determine which of the methods we use in each application, and how they directly affect the results. The solution to the problem is based on encountering issues, and the more we run into issues, the better. Should we not encounter any problems, we will have failed.
+\vfill
+\noindent\begin{tabular}{ll}
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Client Signature & Date\\
+[4ex]% adds space between the two sets of signatures
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Group Signature & Date\\
+[4ex]% adds space between the two sets of signatures
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Group Signature & Date\\
+[4ex]% adds space between the two sets of signatures
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Group Signature & Date\\
+\end{tabular}
+
+\end{singlespace}
+\end{document}
