@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2016.6.14)  26 OCT 2016 03:15
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2016.6.14)  28 OCT 2016 16:00
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -780,56 +780,92 @@ LaTeX Info: Redefining \pageref on input line 45.
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 57.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 56.
 (/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 57.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
  [0]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 63.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
-\tf@toc=\write4
-\openout4 = `ReqDoc.toc'.
-
- [1]
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 69.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 70.
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--96
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--101
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
-[2] (./ReqDoc.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+ []
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 115--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 161
+.
+LaTeX Font Info:    Try loading font information for U+msa on input line 161.
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 161.
+
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+) [2] [3] (./ReqDoc.aux) ) 
 Here is how much of TeX's memory you used:
- 8608 strings out of 256215
- 117007 string characters out of 1917023
- 208243 words of memory out of 1500000
- 11795 multiletter control sequences out of 10000+200000
- 26131 words of font info for 66 fonts, out of 1200000 for 2000
+ 8651 strings out of 256215
+ 117798 string characters out of 1917023
+ 209243 words of memory out of 1500000
+ 11826 multiletter control sequences out of 10000+200000
+ 27830 words of font info for 74 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 30i,6n,37p,295b,393s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 30i,7n,37p,951b,393s stack positions out of 5000i,500n,6000p,200000b,15000s
 
-Output written on ReqDoc.dvi (3 pages, 8496 bytes).
+Output written on ReqDoc.dvi (4 pages, 18180 bytes).

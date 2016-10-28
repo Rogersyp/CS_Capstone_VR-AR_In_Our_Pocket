@@ -45,13 +45,12 @@
 \begin{document}
 \begin{titlepage}
 \centering
-\vspace*{4cm}
+\vspace*{6cm}
 {\scshape\LARGE [Project Name] Requirements } \\
 	{\scshape\Large CS461 - Fall 2016 \par}
 	\vspace{.5cm}
 	\name \par
     {\large \today \par} 
-    
 	\vspace*{1cm}
 	
 \begin{abstract}
@@ -60,56 +59,116 @@ The technology of Virtual Reality (VR) currently is not cost effective to the to
 
 \end{titlepage}
 
-\tableofcontents
 \newpage
-\section{Overview}
+
+\section{Introduction}
+\begin{singlespace}
 \noindent
-This is the text for the overview.
+This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project life-span, and in the documents created. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame webframe, and determine how well it works on mobile devices. With the issues found, we will determine the best ways to approach in designing applications for the virtual reality market on mobile devices, and report on our findings.
+\end{singlespace}
+
+\subsection{Purpose}
+\begin{singlespace}
+\noindent
+The purpose of this project is to determine areas of development within A-Frame where practices will be best used, as they will least be likely to impede on bottle necking either the software or hardware when optimizing the software for performance. This project is focused towards the advancement of an open-source, developing web framework, and the developers making their own products with A-Frame and for mobile devices. The developers will be using our project research as a means to avoid these bottlenecks in this evolving environment.
+\end{singlespace}
 
 \subsection{Scope}
+\begin{singlespace}
 \noindent
-This is the text for the scope.
+This project is to determine virtual reality (VR) and augmented reality (AR) bottlenecks that exist in mobile devices within the A-Frame framework. The bottlenecks can be caused from either unoptimized development of software, underpowered or unoptimized hardware found in existing devices, or potential bugs or limitations found within the framework itself.\\
 
-\section{Glossary}
+\noindent
+The goal of this project is to develop software on the A-Frame (which utilizes HTML and JS languages to reduce their boilerplate graphics initialization), and measure the performances of different graphic scenarios that makes use of VR on mobile devices. With each bugs that our group identifies, bottleneck issues we encounter, and optimization fixes or work around, we will report on these to their respective camps, and determine the best-practices from our findings. 
+\end{singlespace}
+
+\subsection{Glossary}
+\begin{singlespace}
+
 \begin{enumerate}
-    {\item \bfseries Web Framework: } A-Frame
-    {\item \bfseries A-Frame: } A web framework for building virtual reality experiences
-    {\item \bfseries Implementation Languages: } We will be using Java for Android-based programming
-    {\item \bfseries Mobile Devices: } Nexus
-    {\item \bfseries Rendering: } Android User Interfeace
-    {\item \bfseries Bottleneck: } Testing the software against the hardware.
-    {\item \bfseries Optimize: } Android Performance Profiling
-    {\item \bfseries Performance: } Based on Nexus capabilities
-    {\item \bfseries [word]: } N/A
+    {\item \bfseries Virtual Reality (VR): } Computer generated three-dimensional environment that immerses the user into the environment using special equipment or implementation techniques.
+    {\item \bfseries Augmented Reality (AR): } Provides a composite view to the user based on computer generated environments super-imposed onto the view of the real world.
+    {\item \bfseries Web Framework: } A software framework that is designed to support the development of web applications including web services, web resources and web APIs. \\
+    {\item \bfseries A-Frame: } A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with HTML.\\
+    {\item \bfseries Implementation Languages: } a formal computer language or constructed language designed to communicate instructions to a machine, particularly a computer. i.e. HTML, C, C++, etc. \\
+    {\item \bfseries Mobile Devices: } A device that is able to be held and portable by a user, typically a smart phone or tablet \\
+    {\item \bfseries Rendering: } Part of the graphical process that draws everything into the "view's" scene. This includes textures, animations, objects, surface information, etc. \\
+    {\item \bfseries Bottleneck: } An effect impeding on the rendering process, which occurs between the hardware and software aspects. \\
+    {\item \bfseries Optimize: } Process of making something as fully functional or effective as possible, including the types of limitations that occur in the environment. \\
+    {\item \bfseries Performance: } The process of how well the software handles the action or function of the software. \\
+    %{\item \bfseries [word]: } Something 
 \end{enumerate}
 
-\section{The "What" of the Project}
+\end{singlespace}
+
+\subsection{References}
+No references has been used in this document, yet.
+
+\subsection{Overview}
 \begin{singlespace}
-Functionality - The software will be utilized in an Android environment and tested against various web apps such as Chrome and Firefox.\\
-
 \noindent
-External Interface - The external interface will be command-line programming in Windows/Linux.\\
+This paper is a requirements document that describes the approaches we take during this project. It is separated into [num] different clauses. The first clause discusses the breakdown of the project, into different types of attributes and what they talk about. The second clause discusses the correctness of our approach and the goal for the project. The third clause will display a Gantt Chart, which lays out our development process in it's entirety.
+\end{singlespace}
 
+\section{Project Description}
+\begin{singlespace}
 \noindent
-Performace - The performanceof the softawre against the hardware is what is going to be tested in this project.
+External Interface - The software will determine how well it works between the hardware.
+\noindent
+Performace - The speed is dependant on the type of hardware used.
 Availability is large due to the immense market that the mobile devices provide. The software has to be responsive to human interactions, which would include tools to respond to user input, and changing the view of the scene based on the view-port and position the phone provides.\\
-
 
 \noindent
 Attributes - In terms of portability and maintainability, HTML markups and reducing boiler plate functions allows for transferring projects easily and seamlessly.
 Correctness will be based off of how well we can push the boundaries of our software, based on the performance the hardware can provide.\\
 
 \noindent
-Security - N/A, as this is a proof of concept, this necessity does not align within our scope.\\
-
+Security - N/A, as this is a proof of concept, this does not lie within our scope.\\
 \noindent
-Constraints - The biggest constraint is implementing on mobile devices, as these end up typically being weaker than normal hardware that is used for similar, tough, unoptimized graphics rendering that desktop computers are able to provide.
+The problem this project has is that we don't know exactly what problems we will run into, how many problems, or how we will work around these issues. The solution of this project lays in the problems we do find, such as the software bugs or optimization issues as discussed prior in clause three.
 \end{singlespace}
+
+\subsection{Project Functions}
+\begin{singlespace}
+\noindent
+Functionality - The software is supposed to be runnable in a mobile environment to determine bottlenecks between the software and the hardware. The software will be able to be used as an example to point out specific bottlenecks, and their implemented solution to the problem. If a bottleneck that has been identified, but with no knowable fix, then it will be part of the report on the research, and will still be used as an example in the software.
+\end{singlespace}
+
+\subsection{Project User Characteristics}
+\begin{singlespace}
+\noindent
+The intended users for this research project is for advanced software developers. The developers should have a general understanding of the work flow with developing on mobile devices, understanding of the program's frame rates, and battery usage. These developers should have experience with developing on mobile devices, experience in generating and rendering graphical screens on devices through the viewport, and a general understanding of what bottlenecks are, and how to identify them in order to use this research. Without being able to identify what kinds of bottlenecks exist in their own program, they won't be able to use our research to properly optimize their issues.
+\end{singlespace}
+
+\subsection{Project Constraints}
+\begin{singlespace}
+\noindent
+The biggest constraint is implementing on mobile devices, as these end up typically being weaker than normal hardware that is used for similar, tough, unoptimized graphics rendering that desktop computers are able to provide. Aside from the hardware constraints shown, there's a high-order language requirements to be used (A-Frame and it's HTML markup) as this developing framework still has optimizations to undergo. The optimization issues or bugs that we do find during our project will be constrained by what A-Frame will allow us to do with software, in terms of graphical processing and rendering the scenes.
+\end{singlespace}
+
+%\subsection{Project Dependencies}
+%\begin{singlespace}
+%\noindent
+
+%\end{singlespace}
 
 \section{Gantt Chart}
 
-
+To be added.
 
     
-
+\vfill
+\noindent\begin{tabular}{ll}
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Client Signature & Date\\
+[4ex]% adds space between the two sets of signatures
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Group Signature & Date\\
+[4ex]% adds space between the two sets of signatures
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Group Signature & Date\\
+[4ex]% adds space between the two sets of signatures
+\makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+Group Signature & Date\\
+\end{tabular}
 \end{document}
