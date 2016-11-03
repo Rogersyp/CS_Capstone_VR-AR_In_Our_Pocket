@@ -22,6 +22,16 @@
   {\thesection}
   {1em}
   {}
+\titleformat{\subsection}[block]
+  {\fontsize{10}{10}\bfseries\sffamily}
+  {\thesubsection}
+  {1em}
+  {}
+\titleformat{\subsubsection}[block]
+  {\fontsize{10}{10}\bfseries\sffamily}
+  {\thesubsubsection}
+  {1em}
+  {\vspace{.2cm}}
 \geometry{textheight=8.5in, textwidth=6in}
 
 \newcommand{\cred}[1]{{\color{red}#1}}
@@ -46,7 +56,7 @@
 \begin{titlepage}
 \centering
 \vspace*{6cm}
-{\scshape\LARGE [Project Name] Requirements } \\
+{\scshape\LARGE Optimizing Virtual Reality and Augmented Reality on Mobile Web Applications - Requirements Document } \\
 	{\scshape\Large CS461 - Fall 2016 \par}
 	\vspace{.5cm}
 	\name \par
@@ -61,10 +71,14 @@ The technology of Virtual Reality (VR) currently is not cost effective to the to
 
 \newpage
 
+\tableofcontents
+
+\newpage
+
 \section{Introduction}
 \begin{singlespace}
 \noindent
-This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project life-span, and in the documents created. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame webframe, and determine how well it works on mobile devices. With the issues found, we will determine the best ways to approach in designing applications for the virtual reality market on mobile devices, and report on our findings.
+This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project life-span, and in the documents created. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame web framework, and determine how well it works on mobile devices. The software we develop for this project will be used as a series of test cases to measure the performance differences between different types of implementations, or specific scenarios in implementation where we mean to pin point bottlenecks that would occur within mobile devices. After collecting the necessary data (frame rate, processing consumption, battery life-span, and hardware limitations), we will compile a report that analyzes the information to determine the best practices, or bugs that may occur during development. The software we are developing will be conducted on a Nexus 5X, which is the standard of phone being used by other developers working on A-Frame. This helps to eliminate the possibility of hardware differences when measuring the metrics of performance data and bug-specific problems relating to hardware.
 \end{singlespace}
 
 \subsection{Purpose}
@@ -76,18 +90,17 @@ The purpose of this project is to determine areas of development within A-Frame 
 \subsection{Scope}
 \begin{singlespace}
 \noindent
-This project is to determine virtual reality (VR) and augmented reality (AR) bottlenecks that exist in mobile devices within the A-Frame framework. The bottlenecks can be caused from either unoptimized development of software, underpowered or unoptimized hardware found in existing devices, or potential bugs or limitations found within the framework itself.\\
+Optimizing VR and AR for Mobile Web Apps is to determine virtual reality (VR) and augmented reality (AR) bottlenecks that exist in mobile devices within the A-Frame framework. The bottlenecks can be caused from either unoptimized development of software, underpowered or unoptimized hardware found in existing devices, or potential bugs or limitations found within the framework itself. The software itself, which is developed on A-Frame, will generate multiple scenes where it will test the graphical capabilities of the hardware within the mobile devices, the types of different implementations of certain scenes, and determine areas of optimization through these multiple scenes. The software will be used to create a report that will analyze the information collected about processing power, frame rates, battery usage, and the limitations of the framework to determine the best practices for implementing more graphically intensive programs on A-Frame. \\
 
 \noindent
-The goal of this project is to develop software on the A-Frame (which utilizes HTML and JS languages to reduce their boilerplate graphics initialization), and measure the performances of different graphic scenarios that makes use of VR on mobile devices. With each bugs that our group identifies, bottleneck issues we encounter, and optimization fixes or work around, we will report on these to their respective camps, and determine the best-practices from our findings. 
+Developers other than us will use the information in the report to determine the best way to approach at designing their programs, as the software we create will only serve as test cases and stress testing for mobile devices to collect this information. 
 \end{singlespace}
 
 \subsection{Glossary}
 \begin{singlespace}
-
-\begin{enumerate}
-    {\item \bfseries Virtual Reality (VR): } Computer generated three-dimensional environment that immerses the user into the environment using special equipment or implementation techniques.
-    {\item \bfseries Augmented Reality (AR): } Provides a composite view to the user based on computer generated environments super-imposed onto the view of the real world.
+\begin{enumerate}[labelsep=2em,leftmargin=.5in]
+    {\item \bfseries Virtual Reality (VR): } Computer generated three-dimensional environment that immerses the user into the environment using special equipment or implementation techniques. \\
+    {\item \bfseries Augmented Reality (AR): } Provides a composite view to the user based on computer generated environments super-imposed onto the view of the real world. \\
     {\item \bfseries Web Framework: } A software framework that is designed to support the development of web applications including web services, web resources and web APIs. \\
     {\item \bfseries A-Frame: } A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with HTML.\\
     {\item \bfseries Implementation Languages: } a formal computer language or constructed language designed to communicate instructions to a machine, particularly a computer. i.e. HTML, C, C++, etc. \\
@@ -95,43 +108,78 @@ The goal of this project is to develop software on the A-Frame (which utilizes H
     {\item \bfseries Rendering: } Part of the graphical process that draws everything into the "view's" scene. This includes textures, animations, objects, surface information, etc. \\
     {\item \bfseries Bottleneck: } An effect impeding on the rendering process, which occurs between the hardware and software aspects. \\
     {\item \bfseries Optimize: } Process of making something as fully functional or effective as possible, including the types of limitations that occur in the environment. \\
-    {\item \bfseries Performance: } The process of how well the software handles the action or function of the software. \\
+    {\item \bfseries Performance: } The process of how well the software handles the action or function of the software.
     %{\item \bfseries [word]: } Something 
 \end{enumerate}
 
 \end{singlespace}
 
 \subsection{References}
-No references has been used in this document, yet.
 
+\begin{singlespace}
+\noindent
+No references has been used in this document, yet.
+\end{singlespace}
 \subsection{Overview}
 \begin{singlespace}
 \noindent
-This paper is a requirements document that describes the approaches we take during this project. It is separated into [num] different clauses. The first clause discusses the breakdown of the project, into different types of attributes and what they talk about. The second clause discusses the correctness of our approach and the goal for the project. The third clause will display a Gantt Chart, which lays out our development process in it's entirety.
+This paper is a requirements document that describes the approaches we take during this project. It is separated into three different clauses. The first (next section) clause talks about the project description, and introductory information on the constraints and interfaces within the project. The second clause discusses the exact requirements of the project, and their following subsections in detail. The final clause, at the end of this document, will have a Gantt Chart provided, which outlines the timeframe at which we will progress through this project. It details the type of work we are doing in roughly one to two week sprints, and when they occur.
 \end{singlespace}
 
 \section{Project Description}
 \begin{singlespace}
 \noindent
-External Interface - The software will determine how well it works between the hardware.
-\noindent
-Performace - The speed is dependant on the type of hardware used.
-Availability is large due to the immense market that the mobile devices provide. The software has to be responsive to human interactions, which would include tools to respond to user input, and changing the view of the scene based on the view-port and position the phone provides.\\
+This project is to determine areas of optimization within the frameworks specified, by which a software program will be developed to test specific graphical scenarios to stress test the kinds of interfaces and constraints listed. The report will be used to improve the development process of VR and AR application on Mobile Web applications, as they are heavily underdeveloped compared to desktops due to their lack of processing power and high battery consumption.
 
+\subsection{Project Perspective}
+\begin{singlespace}
 \noindent
-Attributes - In terms of portability and maintainability, HTML markups and reducing boiler plate functions allows for transferring projects easily and seamlessly.
-Correctness will be based off of how well we can push the boundaries of our software, based on the performance the hardware can provide.\\
+This software is developed in a the A-Frame framework, which consists of development using HTML and JavaScript implementation languages to manage the graphical scenes. A-Frame utilizes Three.js framework, which allows A-Frame to develop WebGL content within a browser, and reduces boilerplate programs that are  typically found in graphic programs. Our project will  use this platform to develop a culmination of stress testing scenes on specific hardware devices (Nexus 5X) that are the current standard for developing internally.
+\end{singlespace}
 
+\subsubsection{Operations and User Interfaces}
+\begin{singlespace}
 \noindent
-Security - N/A, as this is a proof of concept, this does not lie within our scope.\\
+The extent of user interaction of this software will be determining performance characteristics and moving around the scenes, either by touch or walking. The interface in which the user will interact with the program will be through a 5 inch (diagonal) size screen mobile device. The software will be accessed through a web browser that is hosted on either a local address (only for testing purposes) or hosted on a specific website.
+\end{singlespace}
+
+\subsubsection{Hardware Interfaces}
+\begin{singlespace}
 \noindent
-The problem this project has is that we don't know exactly what problems we will run into, how many problems, or how we will work around these issues. The solution of this project lays in the problems we do find, such as the software bugs or optimization issues as discussed prior in clause three.
+The software will be used and tested on mobile devices that has a 5.2 inch screen at 1920x1080 resolution. This mobile device uses a Hexa-core processor (Snapdragon 808) clocked at 1.4 gigahertz (GHz), an Adreno 418 graphics processor, 2 gigabytes (GB) of RAM, and a 2700 mAh battery. This hardware is identified and quantified to determine the areas of which bottlenecks occur, and measure the metrics related to the hardware and their uses.
+\end{singlespace}
+
+\subsubsection{Software Interfaces}
+\begin{singlespace}
+\noindent
+The software will be developed and tested on an Android Operating System, version 7.0, nicknamed Nougat. The phone will then utilize Mozilla's Firefox and Google Chrome web browsers to use as the testing interface. The browser allows the development of graphical scenes within A-Frame with WebGL and Three.js to allow us to test the framework and stressing the software and hardware. The browsers mentioned will be constantly up to date with the current version on the Google Play Store.
+\end{singlespace}
+
+\subsubsection{Communication Interfaces}
+\begin{singlespace}
+\noindent
+There is no communication interface that will be developed within this program. This will act as a standalone program to serve the function of determining areas of optimization and bugs.
+\end{singlespace}
+
+\subsubsection{Memory Constraints}
+\begin{singlespace}
+\noindent
+Developing on the Nexus 5X will possibly have constraints, due to possibly the types of implementation in the program, or the quality, or amounts of texturing and drawing object to the scene, it is dependant on how complex the implementation becomes. The mobile device will only have 2 GB of on-board RAM. Drawing higher-quality textures or the amount of textures, and complexity of the scenes drawn will determine whether or not there will be memory constraints, and will be one of the metrics measured to determine this as an area of bottleneck.
+\end{singlespace}
+
 \end{singlespace}
 
 \subsection{Project Functions}
 \begin{singlespace}
 \noindent
-Functionality - The software is supposed to be runnable in a mobile environment to determine bottlenecks between the software and the hardware. The software will be able to be used as an example to point out specific bottlenecks, and their implemented solution to the problem. If a bottleneck that has been identified, but with no knowable fix, then it will be part of the report on the research, and will still be used as an example in the software.
+The key points of this project are mainly pretty simple, as this project mostly pertains to research and mid-development discoveries. Though we are developing a program, it isn't the main purpose of this project. The program is supposed to supplement our research towards our final report at the end of this project (outlined in Gantt Chart). The projects functions are organized in a list shown below:\\
+\begin{enumerate}[labelsep=2em,leftmargin=.5in]
+    \item The software is supposed to be runnable in a mobile environment. 
+    \item It will determine bottlenecks between the software and the hardware.
+    \item It will be used to measure frame rates, processor, RAM, and battery consumption.
+    \item Development will result in us reporting bugs within A-Frame and Firefox to Mozilla's bug reporting platform.
+    \item It will help us determine the best practices for some graphical implementations of the A-Frame framework in a VR environment.
+\end{enumerate}
 \end{singlespace}
 
 \subsection{Project User Characteristics}
@@ -143,19 +191,54 @@ The intended users for this research project is for advanced software developers
 \subsection{Project Constraints}
 \begin{singlespace}
 \noindent
-The biggest constraint is implementing on mobile devices, as these end up typically being weaker than normal hardware that is used for similar, tough, unoptimized graphics rendering that desktop computers are able to provide. Aside from the hardware constraints shown, there's a high-order language requirements to be used (A-Frame and it's HTML markup) as this developing framework still has optimizations to undergo. The optimization issues or bugs that we do find during our project will be constrained by what A-Frame will allow us to do with software, in terms of graphical processing and rendering the scenes.
+The biggest constraint is implementing on mobile devices, as these end up typically being weaker than normal hardware that is used for similar, tough, unoptimized graphics rendering that desktop computers are able to provide. The specific hardware specifications are listed and shown as a constraint in section 2.1.2. Aside from the hardware constraints shown, there's a high-order language requirements to be used (A-Frame and it's HTML markup) as this developing framework still has optimizations to undergo. The optimization issues or bugs that we do find during our project will be constrained by what A-Frame will allow us to do with software, in terms of graphical processing and rendering the scenes. The higher-order control functions from the Three.js and A-Frame framework acts as this constraint, as it will limit what we can develop in the scenes, and how we approach the design of the scenes.
 \end{singlespace}
 
-%\subsection{Project Dependencies}
-%\begin{singlespace}
-%\noindent
+\subsection{Project Dependencies}
+\begin{singlespace}
+\noindent
+This project is developed on the software constraints detailed in section 2.1.3. Updated versions of Android (versions  7.0) should not affect the development of this project, or any future iterations of it. This project is also dependant on the frameworks, Three.js, which handles drawing the scenes with WebGL, and A-Frame, which reduces the amount of boiler plate for graphical development, allowing implementation of drawing the scenes through HTML markups. Future updates to these frameworks could potentially alleviate optimization issues that we outline, or bugs that we report.\\
 
-%\end{singlespace}
+\noindent
+This project is also tested on the newest versions of Firefox and Chrome, which will become a dependency due to us not testing development on other platforms such as iOS, and Safari. As we are running into issues during development, we will report the bugs to the respective camps if they become related to a browser-specific issue. JavaScript is an interpreted language while HTML is just a markup language, which are easily understood by these two browsers. Any updates to these browsers will potentially alleviate issues reported.
+\end{singlespace}
+
+\section{Specific Requirements}
+\begin{singlespace}
+\noindent
+This section outlines the specific requirements of the project, which will include information on the externale interfaces, functions, performance requirements, and the underlying attributes of the project. The problem this project has is that we don't know exactly what problems we will run into, how many problems, or how we will work around these issues. The solution of this project lays in the problems we do find, such as the software bugs or optimization issues.
+
+\subsection{External Interface}
+\begin{singlespace}
+\noindent
+External Interface - The software will determine how well it works between the hardware.
+\end{singlespace}
+
+\subsection{Functions}
+\begin{singlespace}
+\noindent
+
+\end{singlespace}
+
+\subsection{Performance Requirements}
+\begin{singlespace}
+\noindent
+Performance - The speed is dependent on the type of hardware used.
+\end{singlespace}
+
+\subsection{Attributes}
+\begin{singlespace}
+\noindent
+Attributes - In terms of portability and maintainability, HTML markups and reducing boiler plate functions allows for transferring projects easily and seamlessly.
+Correctness will be based off of how well we can push the boundaries of our software, based on the performance the hardware can provide.\\
+Security - N/A, as this is a proof of concept, this does not lie within our scope.\\
+Availability - Availability is large due to the immense market that the mobile devices provide. The software has to be responsive to human interactions, which would include tools to respond to user input, and changing the view of the scene based on the view-port and position the phone provides.
+\end{singlespace}
+
+\end{singlespace}
 
 \section{Gantt Chart}
-
-To be added.
-
+\includegraphics[width=\textwidth]{CS461_Req_Doc.PNG}
     
 \vfill
 \noindent\begin{tabular}{ll}
