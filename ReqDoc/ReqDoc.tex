@@ -78,13 +78,13 @@ The technology of Virtual Reality (VR) currently is not cost effective to the to
 \section{Introduction}
 \begin{singlespace}
 \noindent
-This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project life-span, and in the documents created. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame web framework, and determine how well it works on mobile devices. The software we develop for this project will be used as a series of test cases to measure the performance differences between different types of implementations, or specific scenarios in implementation where we mean to pin point bottlenecks that would occur within mobile devices. After collecting the necessary data (frame rate, processing consumption, battery life-span, and hardware limitations), we will compile a report that analyzes the information to determine the best practices, or bugs that may occur during development. The software we are developing will be conducted on a Nexus 5X, which is the standard of phone being used by other developers working on A-Frame. This helps to eliminate the possibility of hardware differences when measuring the metrics of performance data and bug-specific problems relating to hardware.
+This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project's duration as well as within the documents created in the project. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame web framework, and determine how well it works on mobile devices. The software we develop for this project will be used as a series of test cases to measure the performance differences between different types of implementations, or specific scenarios in implementation where we mean to pin point bottlenecks that would occur within mobile devices. After collecting the necessary data (frame rate, processing consumption, battery life-span, and hardware limitations), we will compile a report that analyzes the information to determine the best practices, or bugs that may occur during development. The software we are developing will be conducted on a Nexus 5X, which is the standard of phone being used by other developers working on A-Frame. This helps to eliminate the possibility of hardware differences when measuring the metrics of performance data and bug-specific problems relating to hardware.
 \end{singlespace}
 
 \subsection{Purpose}
 \begin{singlespace}
 \noindent
-The purpose of this project is to determine areas of development within A-Frame where practices will be best used, as they will least be likely to impede on bottle necking either the software or hardware when optimizing the software for performance. This project is focused towards the advancement of an open-source, developing web framework, and the developers making their own products with A-Frame and for mobile devices. The developers will be using our project research as a means to avoid these bottlenecks in this evolving environment.
+The purpose of this project is to determine areas of development within A-Frame where practices will be best used, as they will least be likely to impede on bottle necking either the software or hardware whe n optimizing the software for performance. This project is focused towards the advancement of an open-source, developing web framework, and the developers making their own products with A-Frame and for mobile devices. The developers will be using our project research as a means to avoid these bottlenecks in this evolving environment.
 \end{singlespace}
 
 \subsection{Scope}
@@ -164,7 +164,7 @@ There is no communication interface that will be developed within this program. 
 \subsubsection{Memory Constraints}
 \begin{singlespace}
 \noindent
-Developing on the Nexus 5X will possibly have constraints, due to possibly the types of implementation in the program, or the quality, or amounts of texturing and drawing object to the scene, it is dependant on how complex the implementation becomes. The mobile device will only have 2 GB of on-board RAM. Drawing higher-quality textures or the amount of textures, and complexity of the scenes drawn will determine whether or not there will be memory constraints, and will be one of the metrics measured to determine this as an area of bottleneck.
+Potential constraints from development on the Nexus 5X will will be encountered from either the types of implementation in the program, the quality, or amounts of texturing and drawing object to the scene; it is dependant on how complex the implementation becomes. The mobile device will only have 2 GB of on-board RAM, meaning a more restrictive work load to test with. Additionally, drawing higher-quality textures with regard to the amount of textures, along with complexity of the scenes drawn, will determine whether or not there will be memory constraints and will be one of the metrics measured to determine this as an area of bottleneck.
 \end{singlespace}
 
 \end{singlespace}
@@ -172,12 +172,12 @@ Developing on the Nexus 5X will possibly have constraints, due to possibly the t
 \subsection{Project Functions}
 \begin{singlespace}
 \noindent
-The key points of this project are mainly pretty simple, as this project mostly pertains to research and mid-development discoveries. Though we are developing a program, it isn't the main purpose of this project. The program is supposed to supplement our research towards our final report at the end of this project (outlined in Gantt Chart). The projects functions are organized in a list shown below:\\
+The key points of this project are candid, as this project primarily pertains to research and mid-development discoveries. Though we are developing a program, it isn't the main purpose of this project; the program is supposed to supplement our research towards our final report at the end of this project (outlined in Gantt Chart). The projects functions are organized in a list shown below:\\
 \begin{enumerate}[labelsep=2em,leftmargin=.5in]
     \item The software is supposed to be runnable in a mobile environment. 
     \item It will determine bottlenecks between the software and the hardware.
-    \item It will be used to measure frame rates, processor, RAM, and battery consumption.
-    \item Development will result in us reporting bugs within A-Frame and Firefox to Mozilla's bug reporting platform.
+    \item It will be used to measure frame rates, processing, RAM, and battery consumption.
+    \item Development will result in us reporting bugs through A-Frame with Firefox to Mozilla's bug reporting platform.
     \item It will help us determine the best practices for some graphical implementations of the A-Frame framework in a VR environment.
 \end{enumerate}
 \end{singlespace}
@@ -185,28 +185,28 @@ The key points of this project are mainly pretty simple, as this project mostly 
 \subsection{Project User Characteristics}
 \begin{singlespace}
 \noindent
-The intended users for this research project is for advanced software developers. The developers should have a general understanding of the work flow with developing on mobile devices, understanding of the program's frame rates, and battery usage. These developers should have experience with developing on mobile devices, experience in generating and rendering graphical screens on devices through the viewport, and a general understanding of what bottlenecks are, and how to identify them in order to use this research. Without being able to identify what kinds of bottlenecks exist in their own program, they won't be able to use our research to properly optimize their issues.
+The intended users for this research project are advanced software developers. The developers should have a general understanding of the work flow with development on mobile devices, and an advanced understanding of the program's frame rates and battery usage. These developers should have an intermmediate background experience with developing on mobile devices, experience in generating and rendering graphical screens on devices through the viewport, and a general understanding of what bottlenecks are and how to identify them in order to use this research. Without being able to identify what kinds of bottlenecks exist in their own program, they won't be able to use our research to properly optimize their issues.
 \end{singlespace}
 
 \subsection{Project Constraints}
 \begin{singlespace}
 \noindent
-The biggest constraint is implementing on mobile devices, as these end up typically being weaker than normal hardware that is used for similar, tough, unoptimized graphics rendering that desktop computers are able to provide. The specific hardware specifications are listed and shown as a constraint in section 2.1.2. Aside from the hardware constraints shown, there's a high-order language requirements to be used (A-Frame and it's HTML markup) as this developing framework still has optimizations to undergo. The optimization issues or bugs that we do find during our project will be constrained by what A-Frame will allow us to do with software, in terms of graphical processing and rendering the scenes. The higher-order control functions from the Three.js and A-Frame framework acts as this constraint, as it will limit what we can develop in the scenes, and how we approach the design of the scenes.
+The biggest constraint is implementation on mobile devices, as these end up typically being weaker than normal hardware that is used for similar, tough, unoptimized graphics rendering that desktop computers are able to provide. The specific hardware specifications are listed and shown as a constraint in section 2.1.2. Aside from the hardware constraints shown, there's a high-order language requirements to be used (A-Frame and it's HTML markup) as this developing framework still has optimizations patches to undergo. The optimization issues or bugs that we do find during our project will be constrained by what A-Frame will allow us to do with software in terms of graphical processing and rendering of scenes. The higher-order control functions from the Three.js and A-Frame framework acts as this constraint, as it will limit what we can develop in the scenes and how we approach the design of the scenes.
 \end{singlespace}
 
 \subsection{Project Dependencies}
 \begin{singlespace}
 \noindent
-This project is developed on the software constraints detailed in section 2.1.3. Updated versions of Android (versions  7.0) should not affect the development of this project, or any future iterations of it. This project is also dependant on the frameworks, Three.js, which handles drawing the scenes with WebGL, and A-Frame, which reduces the amount of boiler plate for graphical development, allowing implementation of drawing the scenes through HTML markups. Future updates to these frameworks could potentially alleviate optimization issues that we outline, or bugs that we report.\\
+This project is to be developed regarding the software constraints detailed in section 2.1.3. Updated versions of Android (versions  7.0) should not affect the development of this project, or any future iterations of it. This project is also dependant on the frameworks, Three.js, which handles drawing the scenes with WebGL, and A-Frame, which reduces the amount of boiler plate for graphical development, allowing implementation of drawing the scenes through HTML markups. Future updates to these frameworks could potentially alleviate optimization issues that we outline, or bugs that we report.\\
 
 \noindent
-This project is also tested on the newest versions of Firefox and Chrome, which will become a dependency due to us not testing development on other platforms such as iOS, and Safari. As we are running into issues during development, we will report the bugs to the respective camps if they become related to a browser-specific issue. JavaScript is an interpreted language while HTML is just a markup language, which are easily understood by these two browsers. Any updates to these browsers will potentially alleviate issues reported.
+This project is to be tested against the newest versions of Firefox and Chrome, which will become a dependency due to us not testing development on other platforms such as the OS iOS, or the browser Safari. As we are run into issues during development, we will report the bugs to the respective camps if they become related to a browser-specific issue. JavaScript is an interpreted language while HTML is just a markup language, which are easily understood by these two browsers. Any updates to these browsers will potentially alleviate issues reported.
 \end{singlespace}
 
 \section{Specific Requirements}
 \begin{singlespace}
 \noindent
-This section outlines the specific requirements of the project, which will include information on the externale interfaces, functions, performance requirements, and the underlying attributes of the project. The problem this project has is that we don't know exactly what problems we will run into, how many problems, or how we will work around these issues. The solution of this project lays in the problems we do find, such as the software bugs or optimization issues.
+This section outlines the specific requirements of the project, which will include information on the externale interfaces, functions, performance requirements, and the underlying attributes of the project. The problem this project has is that we don't know exactly what problems we will run into, how many problems there are, or how we will work around them. The solution of this project lays in the problems we do find, such as the software bugs or optimization issues.
 
 \subsection{External Interface}
 \begin{singlespace}
