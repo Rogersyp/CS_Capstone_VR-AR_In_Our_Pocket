@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2016.6.14)  28 OCT 2016 16:00
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2016.6.14)  3 NOV 2016 21:14
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -708,20 +708,20 @@ LaTeX Warning: Unused global option(s):
 No file ReqDoc.aux.
 \openout1 = `ReqDoc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 -- Lines per column: 39 (approximate, difference = 14.73578pt).
 -------------------- Geometry parameters
 paper: letterpaper
@@ -762,7 +762,7 @@ driver:
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-Package hyperref Info: Link coloring OFF on input line 45.
+Package hyperref Info: Link coloring OFF on input line 55.
 (/usr/share/texmf/tex/latex/hyperref/nameref.sty
 Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
 
@@ -771,8 +771,8 @@ Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \ref on input line 55.
+LaTeX Info: Redefining \pageref on input line 55.
 \@outlinefile=\write3
 \openout3 = `ReqDoc.out'.
 
@@ -780,92 +780,134 @@ LaTeX Info: Redefining \pageref on input line 45.
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 56.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 66.
 (/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 66.
  [0]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 64.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 64.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 70.
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
-
- []
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 74.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
-
- []
+\tf@toc=\write4
+\openout4 = `ReqDoc.toc'.
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 115--120
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 84.
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--124
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 161
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
+
+ []
+
+[4]
+
+LaTeX Warning: File `CS461_Req_Doc.PNG' not found on input line 241.
+
+
+! LaTeX Error: File `CS461_Req_Doc.PNG' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241 ...hics[width=\textwidth]{CS461_Req_Doc.PNG}
+                                                  
+? 
+
+! LaTeX Error: Cannot determine size of graphic in CS461_Req_Doc.PNG (no Boundi
+ngBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241 ...hics[width=\textwidth]{CS461_Req_Doc.PNG}
+                                                  
+? 
+File: CS461_Req_Doc.PNG Graphic file (type eps)
+<CS461_Req_Doc.PNG> [5]
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 244
 .
-LaTeX Font Info:    Try loading font information for U+msa on input line 161.
-(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 244.
+ (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 161.
+LaTeX Font Info:    Try loading font information for U+msb on input line 244.
 
 (/usr/share/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
-) [2] [3] (./ReqDoc.aux) ) 
+) [6] [7] (./ReqDoc.aux) ) 
 Here is how much of TeX's memory you used:
- 8651 strings out of 256215
- 117798 string characters out of 1917023
- 209243 words of memory out of 1500000
- 11826 multiletter control sequences out of 10000+200000
- 27830 words of font info for 74 fonts, out of 1200000 for 2000
+ 8662 strings out of 256215
+ 117950 string characters out of 1917023
+ 209247 words of memory out of 1500000
+ 11834 multiletter control sequences out of 10000+200000
+ 28210 words of font info for 75 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 30i,7n,37p,951b,393s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 30i,7n,37p,1318b,430s stack positions out of 5000i,500n,6000p,200000b,15000s
 
-Output written on ReqDoc.dvi (4 pages, 18180 bytes).
+Output written on ReqDoc.dvi (8 pages, 31200 bytes).
