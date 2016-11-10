@@ -74,7 +74,7 @@
 \begin{titlepage}
 \centering
 \vspace*{6cm}
-{\scshape\LARGE Optimizing Virtual Reality and Augmented Reality on Mobile Web Applications - Requirements Document } \\
+{\scshape\LARGE \begin{singlespace}Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications \\ \end{singlespace} Requirements Document } \\
 	{\scshape\Large CS461 - Fall 2016 \par}
 	\vspace{.5cm}
 	\name \par
@@ -82,7 +82,7 @@
 	\vspace*{1cm}
 	
 \begin{abstract}
-The technology of Virtual Reality (VR) currently is not cost effective to the today's market, as the cost of high-end setups required makes it difficult to afford. Browser developers are focusing primarily on high-end specialized hardware for VR on mobile, and are generally ignoring Augmented Reality (AR). Therefore, doing AR on the web allows far more developers to enter the field. To accomplish this, we are working on a project called “Mobile Web App”, which focuses on researching to profile and identify performance bottlenecks in 3D web content on mobile devices. We will file issues in the open source projects for Chrome, Firefox through A-Frame and Three.js to determine and identify those bottlenecks. We hope to accomplish this by reporting the challenges and opportunities for performance VR/AR applications, and write a blog post detailing the project results and their best-practices.
+The technology of Virtual Reality (VR) currently is not cost effective to today's market, as the cost of high-end setups required makes it difficult to afford. Browser developers are focusing primarily on expensive high-end high-performance hardware over mobile devices for Augmented Reality (AR) or Virtual Reality (VR) on the web. Doing AR/VR on the mobile web allows more developers to enter the field and deliver to more customers. To accomplish this, we are working on a project called “Mobile AR/VR Performance”, which focuses on researching to profile and identify performance bottlenecks in 3D web content on mobile devices. We will file issues in the open source projects for Chrome, Firefox through A-Frame and Three.js to determine and identify those bottlenecks. We hope to accomplish this by reporting the challenges and opportunities for performance VR/AR applications, and write a blog post detailing the project results and their best-practices.
 \end{abstract}
 
 \end{titlepage}
@@ -99,7 +99,7 @@ The technology of Virtual Reality (VR) currently is not cost effective to the to
 \section{Introduction}
 \begin{singlespace}
 \noindent
-This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project's duration as well as within the documents created in the project. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame web framework, and determine how well it works on mobile devices. The software we develop for this project will be used as a series of test cases to measure the performance differences between different types of implementations, or specific scenarios in implementation where we mean to pin point bottlenecks that would occur within mobile devices. After collecting the necessary data (frame rate, processing consumption, battery life-span, and hardware limitations), we will compile a report that analyzes the information to determine the best practices, or bugs that may occur during development. The software we are developing will be conducted on a Nexus 5X phone, which is the standard of phone being used by other developers working on A-Frame. This helps to eliminate the possibility of hardware differences when measuring the metrics of performance data and bug-specific problems relating to hardware.
+This project requirements document outlines the entirety of the project, including the necessary definitions and references used throughout the project's duration as well as within the documents created in the project. This paper focuses on what the project is, it's purpose, and the problem it is trying to solve. The problem we need to solve is to optimize performance issues found within the A-Frame web framework, and determine how well it works on mobile devices. The software we develop for this project will be used as a series of test cases to measure the performance differences between different types of implementations, or specific scenarios in implementation where we mean to pin point bottlenecks that would occur within mobile devices. After collecting the necessary data (frame rate, processing consumption, memory consumption, battery life-span, and hardware limitations), we will compile a report that analyzes the information to determine the best practices, or bugs that may occur during development. The software we are developing will be conducted on a Nexus 5X phone, which is the standard of phone being used by other developers working on A-Frame. This helps to eliminate the possibility of hardware differences when measuring the metrics of performance data and bug-specific problems relating to hardware.
 \end{singlespace}
 
 \subsection{Purpose}
@@ -145,7 +145,7 @@ Developers other than us will use the information in the report to determine the
 \subsection{References}
 \begin{singlespace}
 \noindent
-No references has been used in this document, yet.
+No references have been used in this document, yet.
 \end{singlespace}
 
 \subsection{Overview}
@@ -168,7 +168,7 @@ This software is developed in a the A-Frame framework, which consists of develop
 \subsubsection{Operations and User Interfaces}
 \begin{singlespace}
 \noindent
-The extent of user interaction of this software will be determining performance characteristics and moving around the scenes, either by touch or walking. The interface in which the user will interact with the program will be through a 5 inch (diagonal) size screen mobile device. The software will be accessed through a web browser that is hosted on either a local address (only for testing purposes) or hosted on a specific website.
+The extent of user interaction of this software will be determining performance characteristics and moving around the scenes, either by touch or walking. The interface in which the user will interact with the program will be through a 5 inch (diagonal) size screen mobile device. The software will be accessed through a web browser that is hosted on either a local address (which keeps the connection from the phone to the website within the same subnet on the network) or hosted on a specific website.
 \end{singlespace}
 
 \subsubsection{Hardware Interfaces}
@@ -180,7 +180,7 @@ The software will be used and tested on mobile devices that has a 5.2 inch scree
 \subsubsection{Software Interfaces}
 \begin{singlespace}
 \noindent
-The software will be developed and tested on an Android Operating System, version 7.0, nicknamed Nougat. The phone will then utilize Mozilla's Firefox and Google Chrome web browsers to use as the testing interface. The browser allows the development of graphical scenes within A-Frame with WebGL and Three.js to allow us to test the framework and stressing the software and hardware. The browsers mentioned will be constantly up to date with the current version on the Google Play Store.
+The software will be developed and tested on an Android Operating System, version 7.0, nicknamed Nougat. The phone will then utilize Mozilla's Firefox Nightly and Google Chrome Dev web browsers to use as the testing interface. These are both different versions of the commercially released browsers to do proper testing before they are released. The browser allows the development of graphical scenes within A-Frame with WebGL and Three.js to allow us to test the framework and stressing the software and hardware. The browsers mentioned will be constantly up to date with the current version on the Google Play Store.
 \end{singlespace}
 
 \subsubsection{Communication Interfaces}
@@ -213,7 +213,7 @@ The key points of this project are candid, as this project primarily pertains to
 \subsection{Project User Characteristics}
 \begin{singlespace}
 \noindent
-The intended users for this research project are advanced software developers. The developers should have a general understanding of the work flow with development on mobile devices, and an advanced understanding of the program's frame rates and battery usage. These developers should have an intermediate background experience with developing on mobile devices, experience in generating and rendering graphical screens on devices through the view port, and a general understanding of what bottlenecks are and how to identify them in order to use this research. Without being able to identify what kinds of bottlenecks exist in their own program, they won't be able to use our research to properly optimize their issues.
+There are two kinds of intended groups of users for this project, the first one being the developers and authors of the toolkits, libraries and browsers that we intend to file issues with. These authors will be able to review our bug reports and findings to update and improve their toolkits to be able to produce optimized VR and AR web content on mobile devices. The second group of users for this project are advanced software developers. The developers should have a general understanding of the work flow with development on mobile devices, and an advanced understanding of the program's frame rates and battery usage. These developers should have an intermediate background experience with developing on mobile devices, experience in generating and rendering graphical screens on devices through the view port, and a general understanding of what bottlenecks are and how to identify them in order to use this research. Without being able to identify what kinds of bottlenecks exist in their own program, they won't be able to use our research to properly optimize their issues.
 \end{singlespace}
 
 \subsection{Project Constraints}
@@ -287,7 +287,7 @@ The software will have specific actions that will interact between the user and 
     \end{enumerate}
     \item The system shall be used to read in performance metrics as the software progresses through different scenes and implementations.
     \begin{enumerate}[leftmargin=*,labelindent=0pt]
-        \item The system shall be used to measure the performance of frame rates, memory consumption, processor consumption, battery consumption, and response times on the device being used.
+        \item The system shall be used in conjunction with existing tools that specifically measures the performance of frame rates, memory consumption, processor consumption, battery consumption, and response times on the device being used.
         \item The system shall be an example of our concepts of best practices in developing in the A-Frame framework.
     \end{enumerate}
 \end{enumerate}
@@ -319,12 +319,6 @@ While there are minimum requirements to attain a responsive system, this project
 \end{enumerate}
 \end{singlespace}
 
-\subsection{Database Requirements}
-\begin{singlespace}
-\noindent
-This software will not make use of a database, as there is no functional requirement and does not fit our scope.
-\end{singlespace}
-
 \subsection{Attributes And Correctness}
 \begin{singlespace}
 \noindent
@@ -335,12 +329,6 @@ As this project serves as to be used as research, correctness will be based off 
 \begin{singlespace}
 \noindent
 Availability is large due to the immense market that the mobile devices provide. The software has to be responsive to human interactions, which would include tools to respond to user input, and changing the view of the scene based on the view-port and position the phone provides.
-\end{singlespace}
-
-\subsubsection{Security}
-\begin{singlespace}
-\noindent
-Not applicable, as this is a proof of concept, this does not lie within our scope.
 \end{singlespace}
 
 \subsubsection{Maintainability}
@@ -356,8 +344,33 @@ This software should be completely portable with little restrictions on host mac
 \end{singlespace}
 
 \end{singlespace}
-\section{Gantt Chart}
-\includegraphics[width=\textwidth]{CS461_Req_Doc.PNG}
+
+\section{Gantt Chart Information}
+
+\begin{singlespace}
+
+\begin{description}[leftmargin=0]
+\item[Problem Statement:] Detailing the description and proposed solution to the problem for this project.\vspace{.1cm}
+\item[Requirements Document:] Detailing the project outline, and the process included within the project.\vspace{.1cm}
+\item[Technology Review:] Process within our group to analyze the project's scope, delegate tasks within it, and what we will be handling.\vspace{.1cm}
+\item[Design Document:] Document writing detailing how we will be working on this project, including our tools and testing information. \vspace{.1cm}
+\item[Initial Implementations:] Our group will be working on setting up our devices, and getting comfortable with mobile development workflow with "Hello World!" \vspace{.1cm}
+\item[Progress Report \#1:] A report detailing the progress we've made during our first term within this project.\vspace{.1cm}
+\item[Research Bugs:] Time during winter break, will be spent understanding the optimization issues found in mobile devices with the frameworks, and the bugs that exist.\vspace{.1cm}
+\item[Program Design:] After researching and testing initial implementations, this time will be used discussing and designing our specific program implementation and working with the tools to measure performance metrics.\vspace{.1cm}
+\item[Program Implementation (First Two Week Sprint):] Working in two week sprints, we will be able to focus on implementing features and evaluating the process. This is our first sprint.\vspace{.1cm}
+\item[Evaluation and Debug:] First rounds of evaluation, where time is spent analyzing the performance metrics we acquired, plotting what they mean, note and report any blatant optimization issues or bugs.\vspace{.1cm}
+\item[Reiterate Implementation (Second Two Week Sprint):] Second two week sprint, where the focus is on improving the performance metrics from our first implementation, and fixing any issues we encountered.\vspace{.1cm}
+\item[Evaluation and Debug:] Second rounds of evaluation, where time is spent analyzing the performance metrics we acquired from the second sprints, and comparing the differences between the last rounds of evaluation. \vspace{.1cm}
+\item[Progress Report \#2:] A report detailing the progress we've made during our second term within this project.\vspace{.1cm}
+\item[Preparing for EXPO:] Long space open to account for future term requirements and uncertainty. This may include an additional sprint and evaluation depending on other unforeseen requirements that need to be met. \vspace{.1cm}
+\item[Final Report:] A report detailing the progress we've made during our last term within this project.\vspace{.1cm}
+\end{description}
+
+\end{singlespace}
+
+\subsection{Gantt Chart}
+\includegraphics[width=6.5in]{OVRAR_Gantt_Chart.png}
     
 \vfill
 \noindent\begin{tabular}{ll}
