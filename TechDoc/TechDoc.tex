@@ -1,0 +1,196 @@
+\documentclass[letterpaper,10pt,titlepage,draftclsnofoot,onecolumn,utf8,latin1]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{tocloft}
+
+%hide toc subsubsections
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{.5in}
+
+%toc formatting for IEEE 830-1998 standards
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}{\vspace{.25cm}}}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecaftersnum}{.}
+
+%bottom right page numbers
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\pagestyle{fancy}
+
+%formatting specific IEEE 830-1998 Section headings
+\titleformat{\section}[block]
+  {\fontsize{11}{10}\bfseries\sffamily}
+  {\thesection.}
+  {1em}
+  {\vspace{.1cm}}
+\titleformat{\subsection}[block]
+  {\fontsize{10}{10}\slshape\sffamily}
+  {\thesubsection}
+  {1em}
+  {\vspace{.1cm}}
+\titleformat{\subsubsection}[block]
+  {\fontsize{12}{10}\slshape\sffamily}
+  {\thesubsubsection}
+  {1em}
+  {\vspace{.1cm}}
+  
+\geometry{textheight=8.5in, textwidth=6in}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\def\name{Charles Siebert, Branden Berlin, Yipeng "Roger" Song}
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  citecolor = black,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {cs461 ``Technology Review'' writing},
+  pdftitle = {CS461 - Technology Review},
+  pdfsubject = {CS461 Writing},
+  pdfpagemode = UseNone
+}
+
+\title{CS461-Writing Project}
+
+\author{\name}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{9cm}
+{\scshape\LARGE Technology Review and Implementation } \\
+	{\scshape\Large CS461 - Fall 2016 \par}
+	\vspace{.5cm}
+	\name \par
+    {\large \today \par} 
+	\vspace*{1cm}
+    
+\begin{abstract}
+The technology of Virtual Reality (VR) currently is not cost effective to today's market, as the cost of high-end setups required makes it difficult to afford. Browser developers are focusing primarily on expensive high-end high-performance hardware over mobile devices for Augmented Reality (AR) or Virtual Reality (VR) on the web. Doing AR/VR on the mobile web allows more developers to enter the field and deliver to more customers. To accomplish this, we are working on a project called “Mobile AR/VR Performance”, which focuses on researching to profile and identify performance bottlenecks in 3D web content on mobile devices. We will file issues in the open source projects for Chrome, Firefox through A-Frame and Three.js to determine and identify those bottlenecks. We hope to accomplish this by reporting the challenges and opportunities for performance VR/AR applications, and write a blog post detailing the project results and their best-practices.
+\end{abstract}
+\end{titlepage}
+
+\newpage
+
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+\begin{singlespace}
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\newpage
+
+\section{Introduction}
+Our project "Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications," nicknamed "OVRAR" is the development of a VR application and analyzing the performance based on the restrictions of using it in a mobile environment with the same devices. Using the data we collect from the application, we can determine specific bottlenecks and performance issues that may be incurred on the device based on different test implementations. This document outlines the overview of technologies that will be used during the lifeline of the project. Each technology listed will have three tools that could be used to accomplish the specific task, and a comparison between them that will lead to a conclusion of which tool was chosen, and why. The purpose of this document is to break down each section of the project that is required to determine how we will implement the program and how the data will be analyzed.
+
+Every three sections will be authored by each of us, leaving us 9 sections of technologies to be listed. The first three (Section 1 through Section 3) is written by Charles Siebert the second three (Section 4 through Section 6) is written by [Name], and the last three (Section 7 through Section 9) is written by [Name]. Each person authoring their sections will ultimately be responsible for those technologies they discuss and conclude to use to accomplish the tasks of the system and the capturing of data.
+
+\section{The Technologies}
+
+\section{Technology 1}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 2}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 3}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 4}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 5}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 6}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 7}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 8}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Technology 9}
+\subsection{Options to Use}
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+\subsection{Discussion}
+\subsection{Selection}
+
+\section{Conclusion}
+
+\end{singlespace}
+
+\begin{thebibliography}{9}
+
+\bibitem{ref1} 
+Authors of Ref1
+\textit{Ref1 Title}. 
+Ref1 Publisher
+
+\end{thebibliography}
+
+\end{document}
