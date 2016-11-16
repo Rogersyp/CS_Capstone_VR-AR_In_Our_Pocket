@@ -113,7 +113,7 @@ The technology of Virtual Reality (VR) currently is not cost effective to today'
 \section{Introduction}
 Our project "Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications," nicknamed "OVRAR" is the development of a VR application and analyzing the performance based on the restrictions of using it in a mobile environment with the same devices. Using the data we collect from the application, we can determine specific bottlenecks and performance issues that may be incurred on the device based on different test implementations. This document outlines the overview of technologies that will be used during the lifeline of the project. Each technology listed will have three tools that could be used to accomplish the specific task, and a comparison between them that will lead to a conclusion of which tool was chosen, and why. The purpose of this document is to break down each section of the project that is required to determine how we will implement the program and how the data will be analyzed.
 
-Every three sections will be authored by each of us, leaving us 9 sections of technologies to be listed. The first three (Section 1 through Section 3) is written by Branden the second three (Section 4 through Section 6) is written by Charles, and the last three (Section 7 through Section 9) is written by Roger. Each person authoring their sections will ultimately be responsible for those technologies they discuss and conclude to use to accomplish the tasks of the system and the capturing of data.
+Every three sections will be authored by each of us, leaving us 9 sections of technologies to be listed. The first three (Section 3 through Section 5) is written by Branden, the second three (Section 6 through Section 8) is written by Charles, and the last three (Section 9 through Section 11) is written by Roger. Each person authoring their sections will ultimately be responsible for those technologies they discuss and conclude to use to accomplish the tasks of the system and the capturing of data.
 
 \section{The Technologies}
 
@@ -145,7 +145,7 @@ Excel
 \subsection{Options to Use}
 The options for setting up locahost servers are: Nginx, Apache, and Lighttpd.
 \subsection{Evaluation of Options}
-These are the three most used free web-servers provided by the opensource comminuty that will allow of to remotely connect via mobile web-browser through IP address. 
+These are the three most used free web-servers provided by the open source community that will allow of to remotely connect via mobile web-browser through IP address. 
 \subsection{Options Comparison}
 Nginx, the second most popular web hosting server software supports most OS but uses event driver architecture instead of threads. Lighttpd is the third most used server software but serves less than 1\% of domains and is also event-driven. Apache is the most used server software with it being used on 60\% of domains and it supports a multitude of packages. Additionally it is easier to install and provides for a much richer and reliable environment. 
 \subsection{Discussion}
@@ -154,67 +154,137 @@ Because we don't know the situations we are going to run into through our web ho
 Apache 
 
 \section{Generation and capture of the data}
+The biggest part of our project is the generating the data we receive in our test cases, and capturing it so we have good and reliable metrics of performance data to analyze. The challenge that arises from this is when dealing with multiple frameworks of development, such as running this project on the Android OS, on a phone, where it renders multiple test cases through two browsers that are interpreting languages through two different frameworks. If performance issues occur during development, we need to be able to understand where the bottleneck occurs, whether it lives in the OS, the browsers, or the frameworks we're developing on. 
 \subsection{Options to Use}
-There's a couple of options to use, specifically we're looking at the Android SDK, which has a bunch of good features that are included with the capturing of data through different levels of the android stack, where there's performance metrics with the phone, the operating system, and within the browser. A competing tool is the Firefox Dev tools, which allows the connection of devices over a network, and will capture performance metrics through the device onto the browser. This holds information such as performance usage, memory consumption and, and rendering speeds of the scene.
+There's a couple of options to use, specifically we're looking at the Android SDK, which has features that are included with the capturing of data through different levels of the android stack, where there's performance metrics with the phone, the operating system, and within the browser. A competing tool is the Firefox Dev tools, which allows the connection of devices over a network, and will capture performance metrics through the device onto the browser. This holds information such as performance usage, memory consumption and, and rendering speeds of the scene. Chrome Dev tools has similar, competing tools to analyze the metrics when being used to render the scenes on Chrome.
 \subsection{Evaluation of Options}
-Android SDK, Firefox Dev Tools, Chrome Dev Tools.
-\subsection{Options Comparison}
+Below is a list of functionality that comes with each of the tools (Android SDK \cite{android}, Firefox Dev Tools \cite{firefox}, Chrome Dev Tools \cite{chrome}) to be able to compare and contrast the tools that we will use when generating our test scenes through this project. Each of these tools have more features than what is listed, this is just a short description of what each tool will be useful for us.
+\begin{center}
+    \begin{tabular}{ | p{5.5cm} | p{5.5cm} | p{5.5cm} | }
+    \hline
+    \bfseries Android SDK & \bfseries Firefox Dev Tools & \bfseries Chrome Dev Tools  \\ \hline
+    \textbf{Performance Monitor:} Allows us to track the memory and CPU usage during rendering, and frames being developed. 
+    & \textbf{Remote Debugging:} Firefox allows us to do remote debugging of code that is running in Firefox for Android over a USB connection.
+    & \textbf{Remote Debugging:} Similarly to Firefox, allows remote debugging of the code that is running in Chrome for Android over a USB connection.\\
+    
+    \textbf{Memory Dump:} Allows us to see memory allocations to the device to see where memory leaks occur.
+    & \textbf{Performance Tools:} Has multiple tools to analyze processor and memory usage, frame rates, and call trees to see how performance is handled in the browser compared to Android OS.
+    & \textbf{Timeline Performance:} Chrome has a tool that will record and analzye all the activity in the browser as it runs, capturing FPS and CPU usage, along with profiling the JavaScript stack. \\
+    
+    \textbf{GPU Profiling:} An option that allows us to track the time it took to draw the last 128 frames.
+    & \textbf{Source Editor:} Allows us to make quick edits to our source code during runtime and see performance or visual changes.
+    & \textbf{JavaScript Debugging:} Explicit tools for JavaScript debugging, allowing us to step through the code, sets breakpoints at predetermined intervals, and watch variables during runtime.\\
+    \hline
+    \end{tabular}
+\end{center}
 \subsection{Discussion}
-These tools will all actually be used simultaneously, as they are recommended by our client to test multiple tools as we conduct our research. More tools allow us to have a wider set of test cases to determine possible areas of optimization issues and bottlenecks.
-\subsection{Selection}
-All of them are to be used, sections need some expanding here.
+These tools will all actually be used simultaneously, as they are recommended by our client to test multiple tools as we conduct our research. The tools all have a set of performance analysis built into them, which allows us to be able to capture the performance metrics while we test in multiple environments. Each tool has special features specific to each browser, which will help during debugging, and pinpointing areas that are causing performance issues that may occur in different areas of rendering (OS level, browser level, or JS/interpreter level). More tools allow us to have a wider set of test cases to determine possible areas of optimization issues and bottlenecks.
 
-\section{Generation of scenes on Mobile Device}
+\section{Generation of Scenes on a Mobile Device}
+How the scenes will be rendered, and the choice of which device was predetermined for us already. Our client informed us that it would be beneficial to testing if they were all conducted on the same device, the same device used with other teams that are similarly working on the A-Frame framework. This reduces the amount of variables in testing, especially when the devices has different specifications and may handle scenes better or worse than the devices they use. It helps us pinpoint specific areas in testing where bottlenecks occur when attempting to render the scenes on the phone.
 \subsection{Options to use}
-Our client requires us to use a specific mobile device specifically for the sake of having the same device to have a similar testing case for our research. The purpose of the Nexus 5X is to develop on a newer phone that works on an Android platform, as the project is developed on the A-Frame framework, and implemented through the Firefox and Chrome browsers. iOS and Safari are excluded from this testing.
+Since our client requires us to use a specific mobile device to have the same device and have similar testing case for our research, the Nexus 5X is one of the newer phones that came out last year, and has substantial hardware specifications to handle the rendering of graphical scenes. As the project is developed on the A-Frame framework, and implemented through the Firefox and Chrome browsers, the Android OS platform is the most supported for this kind of testing and development. Safari and iOS are excluded from this testing due to issues with A-Frame running on Safari, that research is outside of the scope of our project, and because of this, iPhones were obviously excluded as a choice of hardware for development purposes.
 \subsection{Evaluation of Options}
-The only option is the Nexus 5X, as this is what our client requires us to use for testing development.
-\subsection{Options Comparison}
+The only option is the Nexus 5X, as this is what our client requires us to use for testing development. Though for the sake of comparison \cite{phonespec}, this device is best for our testing development because it allows a wider range of test environments due to the powerful hardware specifications and the platform it was built on. In the comparison below, the hardware specifications the newest generation iPhone 7 and the LG Volt device will be compared.
+
+\begin{center}
+    \begin{tabular}{ | p{5.5cm} | p{5.5cm} | p{5.5cm} | }
+    \hline
+    \bfseries Nexus 5X & \bfseries iPhone 7 & \bfseries LG Volt  \\ \hline
+    \textbf{OS:} Android 7.0 "Nougat"
+    & \textbf{OS:} iOS 10.1.1
+    & \textbf{OS:} Android 5.0 "KitKat\\
+    
+    \textbf{Battery:} 2,700 mAh Lithium Battery
+    & \textbf{Battery:} 1,960 mAh Li-Po Battery
+    & \textbf{Battery:} 3,000 mAh Li-Ion Battery \\
+    
+    \textbf{RAM:} 2 GB DDR3 Memory
+    & \textbf{RAM:} 2GB DDR4 Memory 
+    & \textbf{RAM:} 1 GB DDR3 Memory\\
+    
+    \textbf{CPU:} 1.8 GHz Hexa-core 64-bit Processor
+    & \textbf{CPU:} 2.34 GHz Quad-core 64-bit Processor
+    & \textbf{CPU:} 1.2 GHz Quad-core 64-bit Processor\\
+    
+    \textbf{GPU:} Adreno 418 @ 600 MHz 
+    & \textbf{GPU:} Apple G9 
+    & \textbf{GPU:} Adreno 305 @ 450 MHz\\
+    
+    \hline
+    \end{tabular}
+\end{center}
 \subsection{Discussion}
-To be expanded.
-\subsection{Selection}
+As shown in the table, the Nexus 5X is a very capable phone to handle the rendering of graphical scenes through the browsers. Compared to the other choices shown, it is stronger or similarly comparable in hardware specifications to the newer iPhone, and the LG Volt. Along with uniform testing platforms, the hardware on the Nexus 5X will be reliable enough to generate substantial test cases that can be used on future iterations of mobile devices as the hardware becomes stronger and more efficient. It's logical to test on best hardware for the time, as the hardware will become deprecated within a couple of years.
 
 \section{Version Control and Documentation}
+Our deliverable product for this project will be a report detailing the results we've found through our sets of test cases, and so having proper version control and documentation is a key thing to have for this project. We have a need to be able to have information readily accessible to us for when we are dealing with multiple test cases, to be able to review previous results and data to be able to determine the cause of possible bottlenecks that occur in real time. We need to be able to reference our findings, import and export the data in a fashion that would not mess with the formatting of our documentation and handle imported into our choice of version control without issues.
 \subsection{Options to Use}
-There's multiple forms of version control, Github being the main one, and LaTeX being our word processing document for easy of use within our choice of version control.
+In terms of version control, we are going with Github, as it is a requirement for the class. Everything that is developed, recorded, written, and analyzed will be uploaded to Github. This will encapsulate the entirety of our project. Our documentation can be accomplished a couple of ways, either through LaTeX, Microsoft Word, or Google Docs. Since our documentation is being uploaded to Github, it's essential that our choice of tool meets the requirements of being easily accesible, not ruin formatting, and imported/exported easily into our version control. Each of these tools have their own purpose, and will be detailed below.
 \subsection{Evaluation of Options}
-The options to choose from in terms of version control range from Github, to Dropbox, and Google Docs. Github, being the widely used one, will house the project implementation and documentation of our results from our project.
-\subsection{Options Comparison}
+Microsoft Word is probably the most widely used version of word processing, but has issues when importing and exporting to Github. Since Github essentially parses line per line and uploads the differentials of added/deleted lines every time the document is committed, this makes it difficult to understand what lines were changed in the document. Also when attempting to importing data tables and graphics into Word, it will make formatting as an unnecessary chore.
+
+Google Docs is a free version of version control of documentation and word processing all in one, but comes with a caveat of only really working within itself. Attempting to export the files processed in Google Docs will mess up with formatting, and will not be easily parsed into our version control, where needing to see up to date documentation will become even more unnecessary work. While it does attempt to create a form of version control, it only adds to being an extra place to "check" for up to date information, and the word processing formatting for it just does not fit within our scope for this project.
+
+LaTeX is a mark-up language, similar to HTML. As a word processor, it breaks down the formatting based on the packages included into the file, and the defined parameters allow uniform formatting in all specifically defined areas. Even graphics will be easily imported into the document, as tools such as PSTricks allow the rendering of the images based on a few function calls in the document, and when compiled it will generate the file properly. This fits in the scope for our project as it will fit within the use of our Github version control, and will allow us to see the changes made to the document and view them in real time. It's also very trivial to add special tables of data or analytical images as it is just a file with marked up text where formatting is already predefined.
+
 \subsection{Discussion}
-To be expanded.
-\subsection{Selection}
+Documentation is done very trivially and the compiler for LaTeX handles formatting for everything else. The results are very predictable and the ability to view the contents of the actual .tex file and the resulting .pdf file allows for easy portability and readability into the version control we are using. LaTeX makes it also very trivial to import tables and images into it, when it comes time to generate the analyzed data that we receive for this project. Every other option we discussed has some unnecessary challenges when implementing our results into our documentation. They have too many downsides, while LaTeX fits into the version control scheme very easily.
+
 
 \section{Creation of Scenes in A-frame (Roger)}
 \subsection{Options to Use}
 As the purpose of this project is to determine areas of development within A-Frame where practices will be best used, so we are going to use A-Frame to create scenes.
-A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with
-HTML with the use of the Three.js framework
+A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with HTML with the use of the Three.js framework. 
 \subsection{Evaluation of Options}
+A-Frame will handle the specific Three.js calls to help render the scene with 3D objects with the use of WebGL API. The WebGL API utilized by Three.js will interact with the hardware processing when drawing the topology of polygons, textures, lightings, animations, and scenes to the viewport. There are three things about A-Frame that are important to our project:
+
+a) A-Frame is a framework for reworking Three.js implementations to make the calls to draw 3D scenes simplified by using HTML.
+
+b) A-Frame Takes the marking A-Frame tags and produces the proper JavaScript calls to generate scenes to the browser.
+
+c) These calls are the input information to the Three.js framework, which outputs the polygons and scenesto be drawn.
 \subsection{Options Comparison}
-Other options are HTMLs, or JavaScripts. (need to expand)
-\subsection{Discussion}
+A-Frame is the only option we have, since it is the requirement of the project, and not other frameworks fit in our scope of the project. 
+
+A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with HTML. We are able to build VR scenes that work across smartphones, desktop, the Oculus Rift, and the room-scale HTC Vive.
+
 \subsection{Selection}
+Based on all the points mentioned above, we are going to use A-Frame to create scenes. 
 
 \section{Development Tools (Roger)}
 \subsection{Options to Use}
 In this project, we are going to use Visual Studio as the development tool. Visual Studio is often used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services. 
 \subsection{Evaluation of Options}
+Visual Studio offers a comprehensive development environment to help Web developers build standards-based Web applications and services. It improves productivity by allowing users to rapidly develop, test and deploy Web solutions. Additionally, Visual Studio offers a free version aimed at Web developers. With Visual Web Developer Express, you get a full featured web development environment for working with ASP.NET, Javascript and Web standards.
 \subsection{Options Comparison}
-Compare visual studio with Note++, Sublime and Eclipse.
+Compare visual studio with Notepad++, Sublime and Eclipse.
 \subsection{Discussion}
 \subsection{Selection}
 
-\section{Language Tools or Framework (Roger)}
+\section{Language Tools (Roger)}
 \subsection{Options to Use}
-A implementation language is a formal computer language or constructed language designed to communicate
-instructions to a machine, particularly a computer. i.e. HTML, JavaScript, C, C++, etc. For our project, since we are going to test the performance of web app through A-frame, which is a Web framework, so we decided to use HTML and Java Scripts to implement the test scripts. 
+An implementation language is a formal computer language or constructed language designed to communicate instructions to a machine, particularly a computer. Understanding difference(s) between programming languages is crucial. If wrong language is chosen for a project, it will take a lot of time and efforts to change the course and re-implement the project or its part in different language. For our project, since we are going to test the performance of web app through A-frame, which is a Web framework, so we should choose from the languages that are specific to web development. A few examples are HTML, Java Scripts, and PHP.
 \subsection{Evaluation of Options}
-\subsection{Options Comparison}
-(May compare the language we choose with python, c, or c++)
-\subsection{Discussion}
-\subsection{Selection}
+HTML is easy enough to write, but errors can be costly. Another disadvantage is the time it takes to choose the color scheme of a page and to create lists, tables and forms. An advantage to HTML is that it is easy to code. Much of the code can be customized by someone who knows proper HTML formatting. HTML also allows the use of templates, which makes designing a web page easily.
 
-\section{Conclusion}
+
+JavaScript is very fast because any code functions can be run immediately instead of having to contact the server and wait for an answer. Plus, JavaScript is relatively simple to learn and implement, and it plays nicely with other languages and can be used in a huge variety of applications. Additionally, being client-side reduces the demand on the website server. However, since JavaScript code executes on the users' computer, in some cases it can be exploited for malicious purposes. This is one reason some people choose to disable JavaScript. JavaScript is sometimes interpreted differently by different browsers. Whereas server-side scripts will always produce the same output, client-side scripts can be a little unpredictable. 
+
+One advantage of PHP is that it has both procedure programming language and OOP language features. This mainly attributes to its evolution along the way. This means that programmers from different programming language background can pick up this language within short period of time. Its disadvantage also comes from its ample language features. Some libraries written by a programmer from a procedure programming language may be difficult for programmers with an OOP background to maintain.
+
+\subsection{Options Comparison}
+HTML, stands for Hyper Text Markup Language, is the standard markup language for creating Web pages. It describes the structure of Web pages using markup, and its elements are the building blocks of HTML pages which are represented by tags. HTML tags label pieces of content such as "heading", "paragraph", "table", and so on. Browsers do not display the HTML tags, but use them to render the content of the page
+
+Programs written in JavaScript run in the web browser itself, so if the website has a JavaScript program, the program will be automatically fetched by your visitor's browser and executed on his/her computer. 
+
+PHP programs, on the other hand, run on the computer where your website is located, that is, on your web host's computer. After the PHP program does what it needs to do, it sends the result to the visitor's web browser, which merely displays the results. 
+
+\subsection{Discussion}
+As this project serves as to be used as research, correctness will be based off of how well we can push the boundaries of our software, based on the performance the hardware can provide. Therefore, we need to collect the information in different types of implementations between scenes the program generates, so we should be able to understand and write some test scripts. 
+
+\subsection{Selection}
+We are going to use HTML, JavaScript, and PHP simultaneously, as all three of them are very crucial to understand our project. We need to understand these languages in order to find the bottlenecks, where the optimization needs to be done.
 
 \end{singlespace}
 
@@ -225,6 +295,25 @@ Authors of Ref1
 \textit{Ref1 Title}. 
 Ref1 Publisher
 
+\bibitem{android} 
+Vogella. 
+\textit{Android Application Performance Profiling through Android SDK}. 
+\\\texttt{http://www.vogella.com/tutorials/AndroidTools/article.html}
+
+\bibitem{firefox} 
+Mozilla Developer Network.
+\textit{Firefox Developer Tools}.
+\\\texttt{https://developer.mozilla.org/en-US/docs/Tools}
+
+\bibitem{chrome} 
+Google Chrome DevTools. 
+\textit{Chrome DevTools}.
+\\\texttt{https://developers.google.com/web/tools/chrome-devtools/}
+
+\bibitem{phonespec}
+GSM Arena.
+\textit{Phone Specifications}
+\texttt{http://www.gsmarena.com/}
 \end{thebibliography}
 
 \end{document}
