@@ -24,7 +24,7 @@
 
 %hide toc subsubsections
 \setcounter{tocdepth}{2}
-\setlength{\parindent}{.5in}
+\setlength{\parindent}{.25in}
 
 %toc formatting for IEEE 830-1998 standards
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}{\vspace{.25cm}}}
@@ -113,20 +113,9 @@ The technology of Virtual Reality (VR) currently is not cost effective to today'
 \section{Introduction}
 Our project "Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications," nicknamed "OVRAR" is the development of a VR application and analyzing the performance based on the restrictions of using it in a mobile environment with the same devices. Using the data we collect from the application, we can determine specific bottlenecks and performance issues that may be incurred on the device based on different test implementations. This document outlines the overview of technologies that will be used during the lifeline of the project. Each technology listed will have three tools that could be used to accomplish the specific task, and a comparison between them that will lead to a conclusion of which tool was chosen, and why. The purpose of this document is to break down each section of the project that is required to determine how we will implement the program and how the data will be analyzed.
 
-Every three sections will be authored by each of us, leaving us 9 sections of technologies to be listed. The first three (Section 1 through Section 3) is written by [Name] the second three (Section 4 through Section 6) is written by [Name], and the last three (Section 7 through Section 9) is written by [Name]. Each person authoring their sections will ultimately be responsible for those technologies they discuss and conclude to use to accomplish the tasks of the system and the capturing of data.
+Every three sections will be authored by each of us, leaving us 9 sections of technologies to be listed. The first three (Section 1 through Section 3) is written by Branden the second three (Section 4 through Section 6) is written by Charles, and the last three (Section 7 through Section 9) is written by Roger. Each person authoring their sections will ultimately be responsible for those technologies they discuss and conclude to use to accomplish the tasks of the system and the capturing of data.
 
 \section{The Technologies}
-
-\section{Creation of Scenes in A-frame (Roger)}
-\subsection{Options to Use}
-As the purpose of this project is to determine areas of development within A-Frame where practices will be best used, so we are going to use A-Frame to create scenes.
-A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with
-HTML with the use of the Three.js framework
-\subsection{Evaluation of Options}
-\subsection{Options Comparison}
-Other options are HTMLs, or JavaScripts. (need to expand)
-\subsection{Discussion}
-\subsection{Selection}
 
 \section{Generation Of Scenes In Browser}
 \subsection{Options to Use}
@@ -140,17 +129,6 @@ Though we may be able to test in each of these browsers, our client has asked us
 \subsection{Selection}
 Mozilla Firefox
 
-\section{Generation and capture of the data}
-\subsection{Options to Use}
-There's a couple of options to use, specifically we're looking at the Android SDK, which has a bunch of good features that are included with the capturing of data through different levels of the android stack, where there's performance metrics with the phone, the operating system, and within the browser. A competing tool is the Firefox Dev tools, which allows the connection of devices over a network, and will capture performance metrics through the device onto the browser. This holds information such as performance usage, memory consumption and, and rendering speeds of the scene.
-\subsection{Evaluation of Options}
-Android SDK, Firefox Dev Tools, Chrome Dev Tools.
-\subsection{Options Comparison}
-\subsection{Discussion}
-These tools will all actually be used simultaneously, as they are recommended by our client to test multiple tools as we conduct our research. More tools allow us to have a wider set of test cases to determine possible areas of optimization issues and bottlenecks.
-\subsection{Selection}
-All of them are to be used, sections need some expanding here.
-
 \section{Processing/Analyzing Data}
 \subsection{Options to Use}
 Options for the recording and analyzing of data are: Excel, Google Sheets, Apache OpenOffice, LibreOffice, and many more.
@@ -163,6 +141,29 @@ For our project, we are justing going to be recording software and hardware spec
 \subsection{Selection}
 Excel
 
+\section{Setup Local Host Server}
+\subsection{Options to Use}
+The options for setting up locahost servers are: Nginx, Apache, and Lighttpd.
+\subsection{Evaluation of Options}
+These are the three most used free web-servers provided by the opensource comminuty that will allow of to remotely connect via mobile web-browser through IP address. 
+\subsection{Options Comparison}
+Nginx, the second most popular web hosting server software supports most OS but uses event driver architecture instead of threads. Lighttpd is the third most used server software but serves less than 1\% of domains and is also event-driven. Apache is the most used server software with it being used on 60\% of domains and it supports a multitude of packages. Additionally it is easier to install and provides for a much richer and reliable environment. 
+\subsection{Discussion}
+Because we don't know the situations we are going to run into through our web hosting, we are going to want as server that is not only more reliable and easier to use, but we are potentially going to want to apply different packages, and because apache holes the majority of user use, we can trust that it will be able to cater to our needs and have more up-to-date features. 
+\subsection{Selection}
+Apache 
+
+\section{Generation and capture of the data}
+\subsection{Options to Use}
+There's a couple of options to use, specifically we're looking at the Android SDK, which has a bunch of good features that are included with the capturing of data through different levels of the android stack, where there's performance metrics with the phone, the operating system, and within the browser. A competing tool is the Firefox Dev tools, which allows the connection of devices over a network, and will capture performance metrics through the device onto the browser. This holds information such as performance usage, memory consumption and, and rendering speeds of the scene.
+\subsection{Evaluation of Options}
+Android SDK, Firefox Dev Tools, Chrome Dev Tools.
+\subsection{Options Comparison}
+\subsection{Discussion}
+These tools will all actually be used simultaneously, as they are recommended by our client to test multiple tools as we conduct our research. More tools allow us to have a wider set of test cases to determine possible areas of optimization issues and bottlenecks.
+\subsection{Selection}
+All of them are to be used, sections need some expanding here.
+
 \section{Generation of scenes on Mobile Device}
 \subsection{Options to use}
 Our client requires us to use a specific mobile device specifically for the sake of having the same device to have a similar testing case for our research. The purpose of the Nexus 5X is to develop on a newer phone that works on an Android platform, as the project is developed on the A-Frame framework, and implemented through the Firefox and Chrome browsers. iOS and Safari are excluded from this testing.
@@ -173,17 +174,26 @@ The only option is the Nexus 5X, as this is what our client requires us to use f
 To be expanded.
 \subsection{Selection}
 
-\section{Setup Local Host Server}
+\section{Version Control and Documentation}
 \subsection{Options to Use}
-The options for setting up locahost servers are: Nginx, Apache, and Lighttpd.
+There's multiple forms of version control, Github being the main one, and LaTeX being our word processing document for easy of use within our choice of version control.
 \subsection{Evaluation of Options}
-These are the three most used free web-servers provided by the opensource comminuty that will allow of to remotely connect via mobile web-browser through IP address. 
+The options to choose from in terms of version control range from Github, to Dropbox, and Google Docs. Github, being the widely used one, will house the project implementation and documentation of our results from our project.
 \subsection{Options Comparison}
-Nginx, the second most popular web hosting server software supports most OS but uses event driver architecture instead of threads. Lighttpd is the third most used server software but serves less than 1% of domains and is also event-driven. Apache is the most used server software with it being used on 60% of domains and it supports a multitude of packages. Additionally it is easier to install and provides for a much richer and reliable environment. 
 \subsection{Discussion}
-Because we don't know the situations we are going to run into through our web hosting, we are going to want as server that is not only more reliable and easier to use, but we are potentially going to want to apply different packages, and because apache holes the majority of user use, we can trust that it will be able to cater to our needs and have more up-to-date features. 
+To be expanded.
 \subsection{Selection}
-Apache 
+
+\section{Creation of Scenes in A-frame (Roger)}
+\subsection{Options to Use}
+As the purpose of this project is to determine areas of development within A-Frame where practices will be best used, so we are going to use A-Frame to create scenes.
+A-Frame is an open-source WebVR framework for creating virtual reality (VR) experiences with
+HTML with the use of the Three.js framework
+\subsection{Evaluation of Options}
+\subsection{Options Comparison}
+Other options are HTMLs, or JavaScripts. (need to expand)
+\subsection{Discussion}
+\subsection{Selection}
 
 \section{Development Tools (Roger)}
 \subsection{Options to Use}
@@ -202,16 +212,6 @@ instructions to a machine, particularly a computer. i.e. HTML, JavaScript, C, C+
 \subsection{Options Comparison}
 (May compare the language we choose with python, c, or c++)
 \subsection{Discussion}
-\subsection{Selection}
-
-\section{Version Control and Documentation}
-\subsection{Options to Use}
-There's multiple forms of version control, Github being the main one, and LaTeX being our word processing document for easy of use within our choice of version control.
-\subsection{Evaluation of Options}
-The options to choose from in terms of version control range from Github, to Dropbox, and Google Docs. Github, being the widely used one, will house the project implementation and documentation of our results from our project.
-\subsection{Options Comparison}
-\subsection{Discussion}
-To be expanded.
 \subsection{Selection}
 
 \section{Conclusion}
