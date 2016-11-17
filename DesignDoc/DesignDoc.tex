@@ -1,4 +1,4 @@
-\documentclass[letterpaper,10pt,titlepage,draftclsnofoot,onecolumn,compsoc,utf8,latin1]{IEEEtran}
+\documentclass[letterpaper,10pt,draftclsnofoot,onecolumn,compsoc]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -11,19 +11,21 @@
 \usepackage{url}
 \usepackage{setspace}
 \usepackage{balance}
-\usepackage[TABBOTCAP, tight]{subfigure}
 \usepackage{enumitem}
 \usepackage{pstricks, pst-node}
-\usepackage[utf8]{inputenc}
+\usepackage{inputenc}
 \usepackage[margin=.75in]{geometry}
+
+\newcommand{\subparagraph}{}
 \usepackage{titlesec}
+
 \usepackage{fancyhdr}
 \usepackage{hyperref}
-\usepackage{geometry}
 \usepackage{tocloft}
 
 %hide toc subsubsections
 \setcounter{tocdepth}{2}
+\setlength{\parindent}{.0in}
 
 %toc formatting for IEEE 830-1998 standards
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}{\vspace{.25cm}}}
@@ -39,7 +41,7 @@
 
 %formatting specific IEEE 830-1998 Section headings
 \titleformat{\section}[block]
-  {\fontsize{12}{15}\bfseries\sffamily}
+  {\fontsize{12}{10}\bfseries\sffamily}
   {\thesection.}
   {1em}
   {}
@@ -53,7 +55,6 @@
   {\thesubsubsection}
   {1em}
   {\vspace{.2cm}}
-\geometry{textheight=8.5in, textwidth=6in}
 
 \newcommand{\cred}[1]{{\color{red}#1}}
 \newcommand{\cblue}[1]{{\color{blue}#1}}
@@ -98,6 +99,9 @@ The technology of Virtual Reality (VR) currently is not cost effective to today'
 
 \section{Introduction}
 \begin{singlespace}
+
+\par Our project "Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications," nicknamed "OVRAR" is the development of a VR application and analyzing the performance based on the restrictions of using it in a mobile environment with the same devices. Using the data we collect from the application, we can determine specific bottlenecks and performance issues that may be incurred on the device based on different test implementations. This design document is the roadmap of our project for the rest of the year. We will follow the timeline which has been discussed in this document strictly to keep us on the right track. Though little things may change in terms of detail, but the big picture will still be relevant. In this document, we will write up the design of nine pieces that have been discussed from the technology review. The design for each piece will include: describing design components and steps, creating and formatting a glossary; integrating multiple descriptions of design into a full document, referring to past learning (software engineering experience), and identifying appropriate language to fit genre (research project or product development project).
+
 \end{singlespace}
 
 \subsection{Glossary}
@@ -128,7 +132,7 @@ The technology of Virtual Reality (VR) currently is not cost effective to today'
 
 \begin{singlespace}
 
-\begin{description}[leftmargin=0]
+\begin{description}[leftmargin=0in]
 \item[Problem Statement:] Detailing the description and proposed solution to the problem for this project.\vspace{.1cm}
 \item[Requirements Document:] Detailing the project outline, and the process included within the project.\vspace{.1cm}
 \item[Technology Review:] Process within our group to analyze the project's scope, delegate tasks within it, and what we will be handling.\vspace{.1cm}
@@ -149,8 +153,11 @@ The technology of Virtual Reality (VR) currently is not cost effective to today'
 \end{singlespace}
 
 \subsection{Gantt Chart}
-\begin{center}\includegraphics[width=6in]{OVRAR_Gantt_Chart.png} \end{center}
-    
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{OVRAR_Gantt_Chart.eps}
+    \end{center}
+\end{figure} 
 \vfill
 \noindent\begin{tabular}{ll}
 \makebox[3.5in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
