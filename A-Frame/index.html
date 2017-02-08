@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello, World! - A-Frame</title>
+		<meta name="description" content="Hello, World! - A-Frame">
+		
+		<!-- The ONLY way to achieve link traversal right now is with an old build
+		of A-Frame, which is not officially supported. They are working on improving
+		their implementation for accessing links for the users. -->
+		
+		<script src="js/build.js"></script>
+		
+		<!-- Production Version, Minified -->
+		<!--  <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script> -->
+		<!-- Development Version, Uncompressed with Source Maps 
+		<script src="https://aframe.io/releases/0.4.0/aframe.js"></script>-->
+	</head>
+	<body>
+		<a-scene>
+		<a-assets>
+			<img id="sky" src="textures/sky.jpg">
+			<img id="ground" src="textures/ground.jpg">
+			<img id="text1" src="textures/text1.jpg">
+			<img id="text2" src="textures/text2.jpg">
+		</a-assets>
+
+		<a-entity position="0 1.8 6">
+			<a-camera>
+				<a-cursor color="#4CC3D9"></a-cursor>
+		</a-entity>
+
+		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
+		
+		<!-- This traverses to room 1 -->
+		
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text1" position="-1.5 2 0" href="room2.html">
+		</a-entity>
+		
+		<!-- This traverses to room 2 -->
+		
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text2" position="1.5 2 0" href="room2.html">
+		</a-entity>
+		
+		<a-entity
+			geometry="primitive: plane; width: 60; height: 60;"
+			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground; repeat: 100 100" rotation="-90 0 0">
+		</a-entity>
+		
+		</a-scene>
+	</body>
+</html>

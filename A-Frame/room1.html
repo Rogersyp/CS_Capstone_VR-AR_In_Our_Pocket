@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello, World! - A-Frame</title>
+		<meta name="description" content="Hello, World! - A-Frame">
+		<!-- Production Version, Minified -->
+		<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+		<script src="https://rawgit.com/chenzlabs/stats-in-vr/master/dist/aframe-stats-in-vr-component.min.js"></script>
+		<!-- Development Version, Uncompressed with Source Maps 
+		<script src="https://aframe.io/releases/0.4.0/aframe.js"></script>-->
+	</head>
+	<body>
+		<a-scene stats-in-vr>
+		
+		<a-assets>
+			<img id="sky" src="textures/sky.jpg">
+			<img id="ground" src="textures/ground.jpg">
+		</a-assets>
+
+		<a-entity position="0 1.8 6">
+			<a-camera>
+				<a-cursor color="#4CC3D9"></a-cursor>
+		</a-entity>
+
+		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
+
+		<a-entity
+			geometry="primitive:torusKnot;p:20;q:2;radius:2;segmentsRadial:10" 
+			material="color:#8080FF" position="0 3 0">
+		</a-entity>
+		
+		<a-entity
+			geometry="primitive: plane; width: 60; height: 60;"
+			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground; repeat: 100 100" rotation="-90 0 0">
+		</a-entity>
+		
+		</a-scene>
+	</body>
+</html>
