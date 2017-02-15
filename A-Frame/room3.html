@@ -2,8 +2,10 @@
 <head>
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-  <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-  <script src="https://rawgit.com/chenzlabs/stats-in-vr/master/dist/aframe-stats-in-vr-component.min.js"></script>
+  <!-- Production Version, Minified -->
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <!-- Development Version, Uncompressed with Source Maps 
+  <script src="https://aframe.io/releases/0.5.0/aframe.js"></script>-->
   <style>
     body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; background-color: white;}
    
@@ -11,7 +13,7 @@
 </head>
 
 <body>
-		<a-scene stats-in-vr>
+		<a-scene stats>
 		
 		<a-assets>
 			<img id="sky" src="textures/sky.jpg">

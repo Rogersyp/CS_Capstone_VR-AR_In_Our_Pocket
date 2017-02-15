@@ -2,39 +2,76 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>A-Frame - Room 1<\title>
+		<title>A-Frame - Room 1</title>
 		<meta name="description" content="Room 1">
 		<!-- Production Version, Minified -->
-		<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-		<script src="https://rawgit.com/chenzlabs/stats-in-vr/master/dist/aframe-stats-in-vr-component.min.js"></script>
+		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 		<!-- Development Version, Uncompressed with Source Maps 
-		<script src="https://aframe.io/releases/0.4.0/aframe.js"></script>-->
+		<script src="https://aframe.io/releases/0.5.0/aframe.js"></script>-->
 	</head>
 	<body>
-		<a-scene stats-in-vr>
+		<a-scene id="scene" stats>
 		
 		<a-assets>
 			<img id="sky" src="textures/sky.jpg">
-			<img id="ground" src="textures/ground.jpg">
+			
+			<!-- Free ground Texture obtained from: http://opengameart.org/node/7784-->
+			<img id="ground" src="textures/leaves_ground.jpg">
+			
+			<!-- Free Tree Asset obtained from: http://tf3dm.com/3d-model/low-poly-tree-73217.html -->
+			<a-asset-item id="tree-obj" src="objects/tree.obj"></a-asset-item>
+			<a-asset-item id="tree-mtl" src="objects/tree.mtl"></a-asset-item>
 		</a-assets>
 
 		<a-entity position="0 1.8 6">
 			<a-camera>
 				<a-cursor color="#4CC3D9"></a-cursor>
+			</a-camera>
 		</a-entity>
-
+                
 		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
-
-		<a-entity
-			geometry="primitive:torusKnot;p:20;q:2;radius:2;segmentsRadial:10" 
-			material="color:#8080FF" position="0 3 0">
-		</a-entity>
 		
 		<a-entity
 			geometry="primitive: plane; width: 60; height: 60;"
-			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground; repeat: 100 100" rotation="-90 0 0">
+			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground; repeat: 30	30" rotation="-90 0 0">
 		</a-entity>
 		
 		</a-scene>
+		
+		<script>
+			var sceneEl = document.querySelector('a-scene');
+			
+			if (sceneEl.hasLoaded) {
+				addElements();
+			} else {
+				sceneEl.addEventListener('loaded', addElements);
+			}
+			
+			function generateRand(min, max) {
+				return Math.floor(Math.random() * (max - min) + min);
+			}
+			
+			function addElements () {
+				for (i = 0; i < 50; i++) { 
+					var entityEl = document.createElement('a-entity');
+					entityEl.setAttribute('obj-model', {
+						obj: '#tree-obj',
+						mtl: '#tree-mtl'
+					});
+					entityEl.setAttribute('scale', {
+						x: 2,
+						y: 2,
+						z: 2
+					});
+					entityEl.setAttribute('position', {
+						x: generateRand(-28,28),
+						y: 3.8,
+						z: generateRand(-28,28)
+					});
+					sceneEl.appendChild(entityEl);
+				}
+				
+			};
+		</script>
 	</body>
 </html>

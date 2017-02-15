@@ -5,13 +5,12 @@
 		<title>A-Frame - Room 2</title>
 		<meta name="description" content="Room 2">
 		<!-- Production Version, Minified -->
-		<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-		<script src="https://rawgit.com/chenzlabs/stats-in-vr/master/dist/aframe-stats-in-vr-component.min.js"></script>
+		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 		<!-- Development Version, Uncompressed with Source Maps 
-		<script src="https://aframe.io/releases/0.4.0/aframe.js"></script>-->
+		<script src="https://aframe.io/releases/0.5.0/aframe.js"></script>-->
 	</head>
 	<body>
-		<a-scene stats-in-vr>
+		<a-scene stats>
 		
 		<a-assets>
 			<img id="sky" src="textures/sky.jpg">
@@ -21,13 +20,14 @@
 		<a-entity position="0 1.8 6">
 			<a-camera>
 				<a-cursor color="#4CC3D9"></a-cursor>
+			</a-camera>
 		</a-entity>
 
 		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
 
 		<a-entity
 			geometry="primitive:torusKnot;p:5;q:3;radius:2;segmentsRadial:8" 
-			material="color:#8080FF" position="0 3 0">
+			material="color:#8080FF" position="0 3 0" scale="2 2 2">
 			<a-animation dur="10000" attribute="geometry.q" to="5"></a-animation>
 			<a-animation delay="10000" dur="10000" attribute="geometry.p" to="3"></a-animation>
 		</a-entity>
