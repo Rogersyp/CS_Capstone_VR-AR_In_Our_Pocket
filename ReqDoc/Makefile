@@ -1,9 +1,10 @@
-LATEX	= latex -shell-escape
-BIBTEX	= bibtex
-DVIPS	= dvips
-DVIPDF  = dvipdft
-XDVI	= xdvi -gamma 4
-GH		= gv
+LATEXPATH=/usr/local/apps/tex_live/current/bin/x86_64-linux/
+LATEX	= $(LATEXPATH)latex -shell-escape
+BIBTEX	= $(LATEXPATH)bibtex
+DVIPS	= $(LATEXPATH)dvips
+DVIPDF  = $(LATEXPATH)dvipdft
+XDVI	= $(LATEXPATH)xdvi -gamma 4
+GH	= $(LATEXPATH)gv
 
 EXAMPLES = $(wildcard *.h)
 SRC	:= $(shell egrep -l '^[^%]*\\begin\{document\}' *.tex)

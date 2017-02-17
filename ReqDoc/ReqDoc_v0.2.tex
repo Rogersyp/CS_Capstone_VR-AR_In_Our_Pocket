@@ -18,11 +18,14 @@
 
 \newcommand{\subparagraph}{}
 \usepackage{titlesec}
-%\setlength{\abovecaptionskip}{2pt}
-%\setlength{\belowcaptionskip}{0pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{0pt}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{tocloft}
+
+\lstset{language=HTML,
+        showstringspaces=false}
 
 %hide toc subsubsections
 \setcounter{tocdepth}{2}
@@ -108,7 +111,7 @@ This project requirements document outlines the entirety of the project, includi
 \subsection{Purpose}
 \begin{singlespace}
 \noindent
-The purpose of this project is to determine areas of development within A-Frame where practices will be best used, as they will least be likely to impede on bottle necking either the software or hardware when optimizing the software for performance. This project is focused towards the advancement of an open-source, developing web framework, and the developers making their own products with A-Frame and for mobile devices. The developers will be using our project research as a means to avoid these bottlenecks in this evolving environment.
+The purpose of this project is to determine areas of development within A-Frame where practices will be best used, as they will least be likely to impede on bottle necking either the software or hardware whe n optimizing the software for performance. This project is focused towards the advancement of an open-source, developing web framework, and the developers making their own products with A-Frame and for mobile devices. The developers will be using our project research as a means to avoid these bottlenecks in this evolving environment.
 \end{singlespace}
 
 \subsection{Scope}
@@ -359,13 +362,14 @@ This software should be completely portable with little restrictions on host mac
 \item[Design Document:] Document writing detailing how we will be working on this project, including our tools and testing information. \vspace{.1cm}
 \item[Initial Implementations:] Our group will be working on setting up our devices, and getting comfortable with mobile development workflow with "Hello World!" \vspace{.1cm}
 \item[Progress Report \#1:] A report detailing the progress we've made during our first term within this project.\vspace{.1cm}
-\item[Research Bugs and Tools:] Time during winter break, will be spent understanding the optimization issues found in mobile devices with the frameworks, and the bugs that exist. Time is also spent preliminarily working with and understanding the performance measurement tools used for this project.\vspace{.1cm}
-\item[Program Design:] After researching and testing initial implementations, this time will be used discussing and designing our specific program implementation, working with the tools to measure performance metrics, and defining the work flow of our program and the tools to receive meaningful results.\vspace{.1cm}
+\item[Research Bugs:] Time during winter break, will be spent understanding the optimization issues found in mobile devices with the frameworks, and the bugs that exist.\vspace{.1cm}
+\item[Program Design:] After researching and testing initial implementations, this time will be used discussing and designing our specific program implementation and working with the tools to measure performance metrics.\vspace{.1cm}
 \item[Program Implementation (First Two Week Sprint):] Working in two week sprints, we will be able to focus on implementing features and evaluating the process. This is our first sprint.\vspace{.1cm}
-\item[Evaluation and Debug:] First rounds of evaluation, where time is spent analyzing the performance metrics we acquired, plotting what they mean, note and report any blatant optimization issues or bugs.\vspace{.1cm}
+\item[Evaluation and Debug:] This first evaluation will be spent on creating scenarios to begin finding data. We will generate figure that utilize that data we want to monitor. \vspace{.1cm}
 \item[Reiterate Implementation (Second Two Week Sprint):] Second two week sprint, where the focus is on improving the performance metrics from our first implementation, and fixing any issues we encountered.\vspace{.1cm}
-\item[Evaluation and Debug:] Second rounds of evaluation, where time is spent analyzing the performance metrics we acquired from the second sprints, and comparing the differences between the last rounds of evaluation. \vspace{.1cm}
+\item[Alpha Release:] This will reflect our initial generations of scenes combined with object manipulations present a bases for how we plan to view collect data. \vspace{.1cm}
 \item[Progress Report \#2:] A report detailing the progress we've made during our second term within this project.\vspace{.1cm}
+\item[Evaluation and Debug:] Second rounds of evaluation, where time is spent analyzing the performance metrics we acquired from the second sprints, and comparing the differences between the last rounds of evaluation. \vspace{.1cm}
 \item[Preparing for EXPO:] Long space open to account for future term requirements and uncertainty. This may include an additional sprint and evaluation depending on other unforeseen requirements that need to be met. \vspace{.1cm}
 \item[Final Report:] A report detailing the progress we've made during our last term within this project.\vspace{.1cm}
 \end{description}
@@ -373,7 +377,7 @@ This software should be completely portable with little restrictions on host mac
 \end{singlespace}
 
 \subsection{Gantt Chart}
-\begin{center}\includegraphics[width=6in]{OVRAR_Gantt_Chart.eps} \end{center}
+\includegraphics[width=6.5in]{OVRAR_Gantt_Chart.eps}
     
 \vfill
 \noindent\begin{tabular}{ll}

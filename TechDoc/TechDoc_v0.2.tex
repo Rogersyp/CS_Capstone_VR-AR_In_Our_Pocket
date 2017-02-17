@@ -119,7 +119,6 @@ The technology of Virtual Reality (VR) currently is not cost effective to today'
 Our project "Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications," nicknamed "OVRAR" is the development of a VR application and analyzing the performance based on the restrictions of using it in a mobile environment with the same devices. Using the data we collect from the application, we can determine specific bottlenecks and performance issues that may be incurred on the device based on different test implementations. This document outlines the overview of technologies that will be used during the lifeline of the project. Each technology listed will have three tools that could be used to accomplish the specific task, and a comparison between them that will lead to a conclusion of which tool was chosen, and why. The purpose of this document is to break down each section of the project that is required to determine how we will implement the program and how the data will be analyzed.
 
 Every three sections will be authored by each of us, leaving us 9 sections of technologies to be listed. The first three (Section 2 through Section 4) is written by Branden, the second three (Section 5 through Section 7) is written by Charles, and the last three (Section 8 through Section 10) is written by Roger. Each person authoring their sections will ultimately be responsible for those technologies they discuss and conclude to use to accomplish the tasks of the system and the capturing of data.
-
 \section{Generation Of Scenes In Browser}
 \subsection{Options to Use}
 The options for browser scene generation are: Internet Explorer, Google Chrome, Mozilla Firefox, Opera, and Safari.  
@@ -146,18 +145,20 @@ Excel
 
 \section{Setup Local Host Server}
 \subsection{Options to Use}
-The options for setting up locahost servers are: Nginx, Apache, and Lighttpd.
+The options for setting up locahost servers are: Nginx, Apache, and Lighttpd, or OSU's stak server.
 \subsection{Evaluation of Options}
-These are the three most used free web-servers provided by the open source community, making up over 50\% of domains, that will allow of to remotely connect via mobile web-browser through IP address. 
+The first three are most used free web-servers provided by the open source community, making up over 50\% of domains, that will allow of to remotely connect via mobile web-browser through IP address. The stak server is a server already implemented for engineering stduents to host their own personal webpages. 
 \subsection{Options Comparison}
 a) Nginx, the second most popular web hosting server software supports most OS and uses event driven architecture instead of threads. 
 b) Lighttpd is the third most used server software but serves less than 1\% of domains and is also event-driven. 
-) Apache is the most used server software with it being used on 60\% of domains and it supports a multitude of packages. Additionally it is easier to install and provides for a much richer and reliable environment. 
+c) Apache is the most used server software with it being used on 60\% of domains and it supports a multitude of packages. Additionally it is easier to install and provides for a much richer and reliable environment.
+d) Stak Server is the most readily available and allows remote connect. No setup needed.  
 \subsection{Discussion}
 Because we don't know the situations we are going to run into through our web hosting, we are going to want as server host that is not only more reliable and easier to use, but we are potentially going to want to apply different packages, and because apache holds the majority of user use, we can trust that it will be able to cater to our needs and have more up-to-date features. 
 Additionally, the extensive documentation already online regarding Apache will potentially help us in troubleshooting the errors we run into and will allow for much quicker and hassle-free fixes.
+(*UPDATE*)We have since discovered that OSU has a server platform already implemented for each student and it is remotely connectable for on-the-fly changes. Because of this and in addition to Apache-to-mobile issues, we have switched. 
 \subsection{Selection}
-Apache 
+Stak Servers 
 
 \section{Generation and capture of the data}
 The biggest part of our project is the generating the data we receive in our test cases, and capturing it so we have good and reliable metrics of performance data to analyze. The challenge that arises from this is when dealing with multiple frameworks of development, such as running this project on the Android OS, on a phone, where it renders multiple test cases through two browsers that are interpreting languages through two different frameworks. If performance issues occur during development, we need to be able to understand where the bottleneck occurs, whether it lives in the OS, the browsers, or the frameworks we're developing on. 
@@ -265,7 +266,7 @@ In order to develop a software project as a group, one biggest point is to choos
 \subsection{Evaluation of Options}
 Visual Studio offers a comprehensive development environment to help Web developers build standards-based Web applications and services. It improves productivity by allowing users to rapidly develop, test and deploy Web solutions. Additionally, Visual Studio offers a free version aimed at Web developers. With Visual Web Developer Express, you get a full featured web development environment for working with ASP.NET, Javascript and Web standards.
 
- One of the main advantages of Notepad++ is that it requires no training and you can start HTML straight away. It comes free with every version of Windows which means you do not have to go through the hassle of downloading the program. The program doesn’t take up much space on the laptop/desktop PC and because it’s low specification software it means that it doesn’t take a long time to load.
+One of the main advantages of Notepad++ is that it requires no training and you can start HTML straight away. It comes free with every version of Windows which means you do not have to go through the hassle of downloading the program. The program doesn’t take up much space on the laptop/desktop PC and because it’s low specification software it means that it doesn’t take a long time to load.
  
 Sublime has got a modern and colorful interface. It also has full screen support, and uses the ‘Minimap’ feature pretty well which makes you deal efficiently with files carrying thousands of code lines. Plus, distraction free Mode that makes you more focused on Another advantage of sublime is it can auto saving of your code to keep you worry less and the Spell Checker doesn’t let you make errors while writing codes. Besides, availability of Multiple Selections will eventually simplify your task.
 One big disadvantage of sublime is that its license costs \$70, which makes it an expensive deal than many other code editors
@@ -278,7 +279,7 @@ Of the free options here, Notepad++ is extremely popular. It is often mentioned 
 Sublime text is a beautiful, feature rich option for code writing and editing. A big draw for this editor is the fact that it puts a premium on user experience. This includes features like distraction free writing mode, quick shortcuts/search, split editing, and so on.
 
 \subsection{Selection}
-In this project, we are going to use Visual Studio as the development tool as Visual Studio is often used to develop computer programs for Microsoft Windows, as well as web sites, web applications and web services which our project is mainly focus on.
+In this project, we are going to use Notepad++ as the development tool as it allows us to make quick edits to our files so we can push them to our stak servers without having to run any compilations.
 
 \section{Language Tools (Roger)}
 \subsection{Options to Use}
