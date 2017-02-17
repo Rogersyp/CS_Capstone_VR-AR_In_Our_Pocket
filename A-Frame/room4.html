@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<a-scene id="scene" stats>
+		<a-scene id="scene" stats fog="type: linear; density: 1; far : 50; color: #AAA">
 		
 		<a-assets>
 			<img id="sky" src="textures/sky.jpg">
@@ -34,13 +34,34 @@
 		</a-entity>
 
 		<a-entity
-			geometry="primitive:torusKnot;p:5;q:3;radius:2;segmentsRadial:8" 
-			material="color:#8080FF" position="0 3 0" scale="2 2 2">
-			<a-animation dur="10000" attribute="geometry.q" to="5"></a-animation>
-			<a-animation delay="10000" dur="10000" attribute="geometry.p" to="3"></a-animation>
+			geometry="primitive:torusKnot;p:7;q:2;radius:2;segmentsRadial:8" 
+			material="color:#8080FF" position="0 13 0" scale="2 2 2">
+			<a-animation dur="10000" attribute="geometry.q" to="7"></a-animation>
+			<a-animation delay="10000" dur="10000" attribute="geometry.p" to="2"></a-animation>
 		</a-entity>
+
+
+		<a-entity id="player" collider-check>
+  		<a-entity raycaster="objects: .collidable" position="0 -0.9 0" rotation="90 0 0"></a-entity>
+		</a-entity>
+		<a-entity class="collidable" geometry="primitive: box" position="1 0 0"></a-entity>
+
+
+
 		</a-scene>
 		<script>
+
+			/*AFRAME.registerComponent('collider-check', {
+			  dependencies: ['raycaster'],
+			  init: function () {
+			    this.el.addEventListener('raycaster-intersected', function () {
+			      console.log('Player hit something!');
+			    });
+			  }
+			});
+			*/
+
+
 			var sceneEl = document.querySelector('a-scene');
 			
 			if (sceneEl.hasLoaded) {
@@ -71,11 +92,11 @@
 						z: generateRand(-28,28)
 					});
                                         
-                    entityEl.setAttribute('light', {
-                     	type: 'point',
-                        color: '#424242',
-                        intensity: .1                                       
-                	});
+                    //entityEl.setAttribute('light', {
+                     	//type: 'point',
+                        //color: '#424242',
+                       // intensity: .1                                       
+                	//});
                                          
 					sceneEl.appendChild(entityEl);
 				}
