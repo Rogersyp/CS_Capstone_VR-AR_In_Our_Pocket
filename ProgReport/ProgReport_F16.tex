@@ -1,0 +1,287 @@
+\documentclass[letterpaper,10pt,draftclsnofoot,onecolumn]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{balance}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+\usepackage{inputenc}
+\usepackage[margin=.75in]{geometry}
+
+%crappy error with titlesec
+\newcommand{\subparagraph}{}
+\usepackage{titlesec}
+
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{tocloft}
+
+%hide toc subsubsections
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{.25in}
+
+%toc formatting standards
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}{\vspace{.25cm}}}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecaftersnum}{.}
+
+%bottom right page numbers
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\pagestyle{fancy}
+
+%formatting Section headings
+\titleformat{\section}[block]
+  {\fontsize{12}{12}\bfseries\sffamily}
+  {\thesection.}
+  {1em}
+  {\vspace{.1cm}}
+\titleformat{\subsection}[block]
+  {\fontsize{12}{15}\slshape\sffamily}
+  {\thesubsection}
+  {1em}
+  {\vspace{.1cm}}
+\titleformat{\subsubsection}[block]
+  {\fontsize{11}{20}\slshape\sffamily}
+  {\thesubsubsection}
+  {1em}
+  {\vspace{.1cm}}
+  
+\geometry{textheight=8.5in, textwidth=6in}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\def\name{Charles Siebert, Branden Berlin, Yipeng "Roger" Song}
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {cs461 ``Senior Capstone - Fall 2016'' capstone},
+  pdftitle = {CS 461 Progress Report Fall 2016},
+  pdfsubject = {Capstone Progress Report Fall 2016},
+  pdfpagemode = UseNone
+}
+
+\begin{document}
+\begin{titlepage}
+\centering
+\vspace*{6cm}
+{\scshape\LARGE \begin{singlespace}Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications \\ \end{singlespace} \smallskip Group 52 - Progress Report } \\
+	{\scshape\Large CS461 - Fall 2016 \par}
+	\vspace{.5cm}
+	\name \par
+    {\large \today \par} 
+	\vspace*{1cm}
+	
+\begin{abstract}
+The technology of Virtual Reality (VR) currently is not cost effective to today's market, as the cost of high-end setups required makes it difficult to afford. Browser developers are focusing primarily on expensive high-end high-performance hardware over mobile devices for Augmented Reality (AR) or Virtual Reality (VR) on the web. Doing AR/VR on the mobile web allows more developers to enter the field and deliver to more customers. To accomplish this, we are working on a project called “Mobile AR/VR Performance”, which focuses on researching to profile and identify performance bottlenecks in 3D web content on mobile devices. We will file issues in the open source projects for Chrome, Firefox through A-Frame and Three.js to determine and identify those bottlenecks. We hope to accomplish this by reporting the challenges and opportunities for performance VR/AR applications, and write a blog post detailing the project results and their best-practices.
+\end{abstract}
+
+\end{titlepage}
+
+\newpage
+
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\newpage
+
+\begin{singlespace}
+
+\section{Introduction}
+This paper is a progress report for group 52, "OVRAR" over the past 8 weeks for the Fall term of 2016. Included is a short description of the purpose of our project, and our projected goals based on the time-line we have created. These projected goals are based off of the per week load that we describe in our weekly summaries, and the solutions to the problems that we encounter each week. We are able to determine where these problems are within our group by using these weekly reflections to make a retrospective that clearly details the positives we encounter, things that need to change, and how we will change them.
+
+\section{Purpose and Goals}
+The purpose of this project is to determine areas of development within A-Frame where practices will be best used, as they will least be likely to impede on bottle necking either the software or hardware when optimizing the software for performance. This project is focused towards the advancement of an open-source, developing web framework, and the developers making their own products with A-Frame and for mobile devices. The developers will be using our project research as a means to avoid these bottlenecks in this evolving environment. Developers other than us will use the information in the report to determine the best way to approach at designing their programs, as the software we create will only serve as test cases and stress testing for mobile devices to collect this information.
+
+Optimizing VR and AR for Mobile Web Apps is to determine Virtual Reality (VR) and Augmented Reality (AR) bottlenecks that exist in mobile devices within the A-Frame framework. The bottlenecks can be caused from either unoptimized development of software, underpowered or unoptimized hardware found in existing devices, or potential bugs or limitations found within the framework itself. The software itself, which is developed on A-Frame, will generate multiple scenes where it will test the graphical capabilities of the hardware within the mobile devices, the types of different implementations of certain scenes, and determine areas of optimization through these multiple scenes. The software will be used to create a report that will analyze the information collected about processing power, frame rates, battery usage, and the limitations of the framework to determine the best practices for implementing more graphically intensive programs on A-Frame.
+
+\section{Group Reports}
+Over the past 10 weeks, each of us has submitted weekly updates to describe the progress over the past week, the problems we encountered during the week, and the plans we have for the next week. This is to keep track of our progress as we move through the project time-line, and determine whether we are on track, or behind our current schedule. Based on our time-line we have created (which is found within our Design Document), we are currently on track to finishing all the required documents needed for the term, and researching and designing test implementations over the break. This all prepares us as a group for Winter Term, and the start of implementation and testing. Included in each person's summary of the term includes a retrospective, which outlines positive things we encountered in our group, changes that need to be implemented, and steps required to implement the changes within our group.
+
+\subsection{Charles Siebert}
+The following sections include weekly summaries and a retrospective reflection over the past 10 weeks for Charles Siebert.
+
+\subsubsection{Weekly Summaries}
+
+Our group picks up this project at the start of week three of this term, since the projects were assigned the week before. We met for the first time this week to have our first meeting with our client to discuss the overall scope of the project. During this week, we had to make a Problem Statement that presented the project as a solution, or adding to a solution to a problem. This project specifically is about researching and optimizing an open-source framework that renders virtual and augmented reality scenes onto mobile devices. During this week, we didn't run into any problems in writing the Problem Statement, and our client was pretty clear in the purpose and scope of the project. Our challenges for the next week is understanding what needs to go into a Requirements Document and start thinking about how to approach implementing A-Frame onto mobile devices. Our client discusses with us about testing development on standardized equipment that they use, to reduce discrepancies, so he is sending us Nexus 5X phones.
+
+The next coming week, in week four, we plan on setting up the phones we received to be used as tools for this development process. We talked after out meeting with our TA about learning the tools to use and get set up with the Hello World project in A-Frame. Since the last week, we've received feedback on our Problem Statements to revise it once more, and received the requirements for producing a Requirements Document for this project, that will be uploaded to this project's repository by October 28th. When Roger and I contacted our client in the weekly meeting, we discussed the goals of the coming week and will reconvene next Monday about our progress. We haven't had any problems this week, as being in contact with our client and group members hasn't been an issue.
+
+Starting at week five, we are going to be finishing up our revisions to the final version of our Requirements Document. After we revised the Problem Statement and re-submitted with the proper signatures, we received an extension towards this next writing assignment. We didn't meet up with our TA at the end of the week, due to other circumstances, though we did meet with our client to talk about the upcoming work we are producing and what the document entails. During the week, we started putting together our Requirements Document, which seemed to pose a problem due to missing a session of class to properly evaluate the kind of content that goes into it. Missing a time for our group to meet made it hard for us to communicate and properly plot out a Gantt chart to describe how the coming months will play out. Our next meeting with our client is on Tuesday to go over the progress we've made and talk about how the coming week looks like.
+
+In week six, we had to work hard on our Requirements Document, as it is due very soon, with our clients signature. We received back our problem statement, which had a low scoring on it, so we went to discuss it with Kirsten during her office hours. We were able to find out that the wording was stated as a real life problem, when we're on a research project rather than producing an item for consumers. We plan on starting to work on figuring out how our initial implementation is going to work, as we have to decide on the system to host a local web server, and connecting remote debugging on our mobile device. There haven't been any problems this week, as we have planned out the work needed to get our requirements document finished.
+
+During week seven, I worked on the revisions of the Requirements Document with our client, discussing some issues that were unclear, or heeding his advice on the length of certain sprints that we have planned out in our time-line for our project. Though we tried to have revisions and a final version turned in on Friday the previous week, it's good that we were able to discuss some pertinent details and concerns that our client had. Aside from this, we worked on discussing the parts of the Technology Review that we have to put together, all in which we have 3 parts that we are responsible for.
+
+Our plan for the next week is finishing the Technology Review, which is due on Monday, and start the planning process for our Design Document. We have a meeting with our client on Monday to discuss in detail some of the technologies we need to utilize based on the constraints of our specific project. Overall, the biggest challenge we faced was finishing the revisions for the Requirements Document while simultaneously attempting to piece together the things we need to write for the tech review. The added time to send the document back for clarification and confirmation on the unclear sections will add some time to the process.
+
+In week eight, we were unable to properly finish the Technology Review in time on Monday. We received an extension on the assignment so we can finish the assignment and turned it in on Wednesday at noon through the GitHub repository. One of the classes this week was cancelled, which gave us some time to look through the sections of the Design Document, and determine which parts of the system we need to describe in detail. During the cancelled class time, we were able to commit a bare bones document to start off with the Design Document to our GitHub repository. We talked with our client and discussed some technologies that their other teams have used to track the performance metrics through web-browsers on phones, which led us to some good information to include and discuss in the documents.
+
+This coming week, we have to prepare for the last few assignments for this term, of which include the Design Document, Progress Report (Term 1) and the poster, which are all pretty time consuming. Currently our focus is getting the first revision of the Design Document out as soon as possible to get feedback as early as we can to avoid the situation we ran into with the Requirements Document (time delays between revisions caused some issues). Though this is Turkey Week next week, I will have some time to work on this during the times I get tired of my family. We didn't run into any pressing issues this week, but I do think we will have some trouble finding time during dead week and finals week to finish all of the stuff to end this term. It's essential we get some of the pressing matters finished as soon as possible.
+
+Since week nine has a holiday, we had little time to meet up and coordinate. It was discussed that we would make headway on the documents we need to prepare and work on our progress report that's due at the end of the term. The past week I worked on a bit of my part of the presentation and discussed how we will piece together the progress report and video, and it looks like we'll be using OBS (Open Broadcast Software) as our tool, since I've had previous experience with it. The next week, we need to have a finished version of our Design Document by Sunday at the latest, for our client to go over in time for it to be turned in on Friday (Dec. 2nd). Our challenges we face is getting enough time to meet together and get these documents all pieced together, since we have two papers, a 30 minute presentation, and a poster we need to fulfill within the span of eight days.
+
+In the last week of the term, we had to work to get the Design Document done in time, and have it polished enough to send off to our client. We finished the Design Document, and turned it in without our client's signature as we are still waiting for a response for some feedback or revisions. The design document itself lists out the concerns of the project, where we need to determine how to overcome these concerns based on our design decisions we make. This included the tools we are using, methodology of implementing and re-implementing, and ideas of how we are going to stress the resources we have in order to determine areas of optimization and bottlenecks.
+
+Since it is the end of the term, this is a harder deadline. We planned out what to do for the rest of the term, in terms of the poster and progress report. Essentially we are meeting up during the weekend to record our presentation for our project, where we will make and use our sections of PowerPoint slides to talk about. The challenges we face for the coming week is to find enough time to be able to write all the slides, record enough interesting content, and then still be able to put together a mock-poster and the final progress report. Though we do have a challenge over the winter break, and that's to not get distracted from the project and stay on course. We plan on doing research on the bugs currently found within A-Frame and Firefox specifically, and start our initial, simple implementations of A-Frame onto our mobile devices. This will help us in understanding the work flow that is required for this project over the coming months.
+
+\subsubsection{Retrospective Reflection}
+
+\begin{center}
+    \begin{tabular}{ | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | }
+    \hline
+    \bfseries Positives & \bfseries Deltas & \bfseries Actions \\ \hline
+    
+    We all are excited to work on VR and AR with this project. 
+    & We met with some close deadlines through this term, could cause some issues down the line. 
+    & Work on smaller chunks of the project more frequently, and possibly meeting with our group more frequently. \\ \hline
+    
+    Delegating and splitting up work has been easy. 
+    & We need more review time for our projects before the deadlines. 
+    & We do this by having work done early and frequently in order to review and refine the work, adding a layer to the process.\\ \hline
+    
+    We've had little issues meeting with our client. 
+    & Our time is valuable with our client during the meetings, we should utilize this. 
+    & We should meet before our Skype meeting with our client and discuss content to discuss with him prior. \\ \hline
+    
+    Picking our three technologies helped us focus in working those specific areas based on the research we've done.
+    & We need to teach each other the technologies and how they interact with the system for when we dive into development.
+    & Creating documents of workflow based on the tools of the system we have placed will help in standardizing execution through all steps, and remove any confusion in gathering and reading results. \\ \hline
+    
+    Creating a Gantt Chart helped us map out the project milestones we have and help us determine whether we are on track. 
+    & We may need to be cautious about some of our milestones, as we may need to fit in a third round of reimplementation and testing.
+    & During the initial round of implementing and testing, we need to consider the time it takes to test and read in the information. If it's too long, or some tests prove inconclusive, we may need change the milestone deadlines. \\ \hline 
+    \end{tabular}
+\end{center}
+
+\subsection{Branden Berlin}
+The following sections include weekly summaries and a retrospective reflection over the past 10 weeks for Branden Berlin.
+
+\subsubsection{Weekly Summaries}
+It was during week 3 that we were told we had been assigned to the Optimizing Virtual Reality and Augmented Reality Performance on Mobile Web Applications. From then, we made contact with our client Dietrich Ayala and and scheduled weekly meetings via Skype.
+
+During week 4 was when we actually had our first meeting. We had recently submitted our Problem Statement for the class but were still not entirely sure as to what our project was going to involve, so we made that the topic for our first skype meeting. During the meeting, our client gave us not only the un down of our project, but the background for it, why we were doing what we were doing; basically the current forms of VR are expensive and unobtainable, however, most people have mobile phones. So Mozilla is setting out to make VR and AR a feasible for mobile users through web applications. We were then told our project would be research into the current capabilities of it and to basically find current issues with it.
+
+The following week we received our Nexus phones that we will be testing on and planned to get it set up. Our client gave us a basic run down of what we were going to be using on the phone, which were basically debugging tools and various firefox web browsers. Additionally, we revised our problem statement based on the TA's response to what we originally had, however, we were not able to meet with him this week and were not able to have one last approval, but we mostly had it finished and began the bare bones for our requirement document for the following week.
+
+For week 6 we received our Project Statement back one last time which required a few more revisions on its verbage as well as its purpose as a whole (research instead of product). We planned to make the changes the following week and turned in for review, but instead we were not able to get it in until week 9. Additionally, for the next week we will be setting up our environments and hopefully get the basics down of our project. By the end of this, we hope to be able to link our phone to a computer server's webpage via our local IP.
+
+During this next week we worked more on revisions for our Requirements Document along with our client to get it to a way he approved of, which took quite a few revisions. This showed us that we didn't actually fully understand our project like we thought we did, but through our client's recommendations we were finally able to get a solid idea of what it is we were actually going to be researching. We next planned to finish up our tech review. This proved difficult while we were also still working our requirements document but we were able to finish it up in the end and learned a valuable lesson in time management. 
+
+During week 8 we submitted our Tech Document though some requirements came to light last minute, so the final turned in draft was a bit rushed and possibly contained some grammatical errors(on my end). That being said, the final draft was able to cover what it needed to cover and additionally left room for some changes me might run into further down the road of our project when we actually get to the implementation portion. We talked with our client and 1) talked about some applications that we are free to either use or find alternatives for and 2) talked about the applications we would need to use and cannot find change. Our plan for next week was to finish our draft for our design document and start working on our poster as well. 
+
+For the last recorded week we came back to our original problem statement and made it even more ckea for Kiesten. Additionally, we completed our portions for the Technical Document and got that signed by our client. Our plan was next to next finish up our progress report by Sunday. We divided up the slides based on our knowledge areas for our three subjects and convened to make our recording on Sunday, which went smoothly.
+
+For Winter break we plan to at least get the Hello World function up and running on our phone. By doing this we will have a huge head start in actually starting our project and it will cut out installation times during actual winter term so we can wholeheartedly focu on actual research and development.
+\bigskip
+
+\subsubsection{Retrospective Reflection}
+
+\begin{center}
+    \begin{tabular}{ | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | }
+    \hline
+    \bfseries Positives & \bfseries Deltas & \bfseries Actions \\ \hline
+	
+    Not only was it cool that we found out that we were working with Mozilla, but it is on a subject we were passionate about. VR and AR are such broad and emerging technologies and being a part of the foundation of their research was a great excitement to us. The best part is that our group functions very well and coordinates seemlessly. 
+    & We aren't all familiar with mobile web VR and need to look into it. 
+    & We need to get our Hello World function running. \\ \hline
+    
+    We are always on time when meeting with our client or at least make it known a head of time if we cannot make it an seek out what we missed. 
+    & We need to let our client know a head of time when something needs to be signed. 
+    & We will let our client know a head of time what needs to be signed and what it's going to cover.\\ \hline
+    
+    We understand  what is requried of us and do our part for each assignmen. 
+    & We need to email our client a bit more instead of only talking during weekly meetings. 
+    & When we begin implementation we will talk to him more regularly. \\ \hline
+    
+    We are capable of reminding others within our group of potential descrepencies in our assignment allowing them to get it corrected before turn in.
+    & We need to either start our assignments earlier or at least get a better understanding early on.
+    & We will corrdinate our next assignment during our weekly meetings. \\ \hline
+    
+    We are all fundamentally excited about this project! 
+    & Because of our three subject division we need to make sure others in our group don't fall behind in an area that is one of our personal three subjects.
+    & We will set aside time to teach each other about our three subjects as well as teach eachother along the way. \\ \hline 	
+	
+    \end{tabular}
+\end{center}
+
+\subsection{Yipeng "Roger" Song}
+The following sections include weekly summaries and a retrospective reflection over the past 10 weeks for Yipeng "Roger" Song.
+
+\subsubsection{Weekly Summaries}
+We start working on this project since week three of this term. In week three, everything works well for us and we do not run into any problems. We meet out group members and contact with our client for the first time and pick a time which works for all of us for our weekly meetings. During the Skype meeting with our client, we clarify the problem, our task, and his expectation of this project. He also introduce the testing development on standardized equipment that they use to reduce discrepancies. Other than that, we finish the final check for our problem statement, and revise few words and sentences. Besides, I create a GitHub repo for our project and add collaborators. 
+
+In week four, we receive feedback on the problem statement, and we are going to revise it based on the comments we got. During the skype meeting with our client, we talk about the setups for the phone we received which is going to be used as a testing tool, and get walking knowledge of A-Frame about how to program a virtual environment. Like previous week, we do not run into any troubles. 
+
+During week five, we finish the revision of our problem statement and turn it in and we've got all information we need for the requirement statement and start putting them together. However, we do not meet with our client since he is a trip to Europe. Plus, our TA cancel the meeting for some emergency issue. Therefore, the main problem we face in this week is that our group do not meet as often as previous weeks, but it is not a big deal since we make a good arrangement of the things we need to do.
+
+For week six, we get our problem statement back with a score lower than we expected. So we meet with our instructor and discuss about our paper. The good news is, we actually do pretty well in our writing, but just a few words in some sentences make it hard for readers, who are not in this field, to understand. We stated it as a real life problem but we are doing a research project rather than making a real product. Brandon is going to revise it once more and resubmit it. We also discuss about the time-line (Gantt chart) for our project. Other than that, we do not have any problems in this week. 
+
+In week seven, we finish the requirement document and send it to our client. But unfortunately, it takes a litter longer than we expect for our client to get back to us. Based on the suggestions and comments from our client,  we revise the paper and email him back on Thursday morning. Since Brandon will be out of town during the long weekend, we decide to sign the paper before we get the signature from our client. So our TAs should receive two copies of the last page, one with all members signed and another one with our client signed. The problem we are facing for this week is short of time. Since we take longer process in communicating, we don't have enough time working on the tech review. Plus, we are not able to discuss the three pieces that we should work on during the long weekend, we are worrying about if we finish this assignment on time with high quality.
+
+Fortunately, we are able to finish the tech review on time during week eight though I think we can do a better job if we could have more time. During the weekly meeting with our client, he introduces some technologies that other groups have used to track the performance through web-browsers, which will be helpful for our documents.  We do not have too many problems this week, but since next week is Thanksgiving, I think it might be a little harder for us to meet together. So we decide to do as much as we can for the design document before we leave campus. At last, we finish a bare bone of the design document and put a brief intro into the document. More importantly, we fully understand what we should write and discuss in this document which will save a lot of time for us. 
+
+Due to the holiday, we do not make too much progress in week nine since we have little time to meet up and discuss. The good news is that since Charles has previous experience with OBS, it will be not too hard for us to record the final presentation. The main problem in this week is, obviously, short of time. We only have a few days to break the papre into pieces and finish it, so we need to pick up any time we have and get all these things done, with high quality. 
+
+In the last week of the term, we finish the design document. Though we are still waiting for the feedback and revision suggestions from our client, we decide to turn it in without the signature of our client in order not to miss the deadline. Since it is getting closer to the end of the term, we decide to meet at Sunday and finish recording our presentation. Plus, there is a hard deadline for this assignment. So we need to finish our part of slides and know what to present before we meet. The problem for this week is, still, lack of time. Since all of us have a busy term and have a few finals need to prepare for, we are expecting if we could have more time to work on these assignments. But that should not be a big deal. Since we have made good time management and break down tasks clearly, I believe we are able to finish it on time and meet the expectations!
+
+
+\subsubsection{Retrospective Reflection}
+
+\begin{center}
+    \begin{tabular}{ | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | }
+    \hline
+    \bfseries Positives & \bfseries Deltas & \bfseries Actions \\ \hline
+    We are really excited to work with Mozilla on this VR and AR project
+    & None of us have experience of programing either VR or AR before
+    & We need to read more related materials such as codes and professional documents and raise more questions to our client \\ \hline
+    
+    Overall, it is easy to contact with our client 
+    & Since we meet with our client only about 30 minutes a week, we need to fully use that time
+    & Each of us should do some preparations for the meeting, including the questions we have, the problems we run into, or anything related \\ \hline
+    
+    All three of us are very nice and would love to help others
+    & We can build a closer relationship, and contact more often
+    & We can meet more frequently and share our experience and things that we learned of doing this project  \\ \hline   
+    
+    Though it is rush sometimes, we are able to finish everything on time
+    & We need to start our assignment earlier or at least do a brainstorming session for it
+    & We can plan ahead and meet together and share our thoughts about the coming assignment \\ \hline    
+    
+    The suggestions and feedback from our client is very useful
+    & We need to give our client more time to review our documents
+    & We will let our client know about the assignment ahead of time so that he could know what to expect \\ \hline    
+    
+    We are able to breakdown the whole project into pieces, and each of us will focus on the specific areas based on the technologies we picked
+    & We need to keep everyone in the group in the same page, so we need to teach each other before development
+    & We can either meet up together or share some related documents to each other and answer questions if there is any \\ \hline
+    
+    
+    \end{tabular}
+\end{center}
+
+\end{singlespace}
+
+\end{document}
