@@ -25,39 +25,75 @@
 			<img id="text2" src="textures/text2.jpg">
 			<img id="text3" src="textures/text3.jpg">
 			<img id="text4" src="textures/text4.jpg">
+                        <img id="text5" src="textures/text5.jpg">
+			<img id="text6" src="textures/text6.jpg">
+			<img id="text7" src="textures/text7.jpg">
+			<img id="text8" src="textures/text8.jpg">
 		</a-assets>
 
-		<a-entity position="0 1.8 6">
+		<a-entity position="0 1.8 0">
 			<a-camera>
 				<a-cursor color="#4CC3D9"></a-cursor>
 		</a-entity>
 
 		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
-		
+                
 		<!-- This traverses to room 1 -->
 		
 		<a-entity
 			geometry="primitive: plane; height: 2; width: 2"
-			material="shader: flat; src: #text1" position="-4.5 2 0" href="room1.html">
+			material="shader: flat; src: #text1" position="-4 2 -4.5" rotation="0 90 0" href="room1.html">
 		</a-entity>
 		
 		<!-- This traverses to room 2 -->
 		
 		<a-entity
 			geometry="primitive: plane; height: 2; width: 2"
-			material="shader: flat; src: #text2" position="-1.5 2 0" href="room2.html">
+			material="shader: flat; src: #text2" position="-4 2 -1.5" rotation="0 90 0" href="room2.html">
 		</a-entity>
+		
+                <!-- This traverses to room 3 -->
+                
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text3" position="-4 2 1.5" rotation="0 90 0" href="room3.html">
+		</a-entity>
+                
+                <!-- This traverses to room 4 -->
+                
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text4" position="-4 2 4.5" rotation="0 90 0" href="room4.html">
+		</a-entity>
+		
+                <!-- This traverses to room 1 reiteration -->
 		
 		<a-entity
 			geometry="primitive: plane; height: 2; width: 2"
-			material="shader: flat; src: #text3" position="1.5 2 0" href="room3.html">
-		</a-entity>
-
-		<a-entity
-			geometry="primitive: plane; height: 2; width: 2"
-			material="shader: flat; src: #text4" position="4.5 2 0" href="room4.html">
+			material="shader: flat; src: #text5" position="4 2 -4.5" rotation="0 -90 0" href="room1r.html">
 		</a-entity>
 		
+		<!-- This traverses to room 2 reiteration -->
+		
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text6" position="4 2 -1.5" rotation="0 -90 0" href="room2r.html">
+		</a-entity>
+		
+                <!-- This traverses to room 3 reiteration -->
+                
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text7" position="4 2 1.5" rotation="0 -90 0" href="room3r.html">
+		</a-entity>
+                
+                <!-- This traverses to room 4 reiteration -->
+                
+		<a-entity
+			geometry="primitive: plane; height: 2; width: 2"
+			material="shader: flat; src: #text8" position="4 2 4.5" rotation="0 -90 0" href="room4r.html">
+		</a-entity>
+                
 		<a-entity
 			geometry="primitive: plane; width: 60; height: 60;"
 			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground; repeat: 100 100" rotation="-90 0 0">
