@@ -19,6 +19,15 @@
 			<img id="ground2" src="textures/high_texture_ground.jpg"> 
 			<img id="high3" src="textures/high_texture3.jpg">
 			<img id="high4" src="textures/high_texture4.jpg">
+			<img id="high5" src="textures/high_texture5.jpg">
+			<img id="high6" src="textures/high_texture6.jpg">
+			<img id="high7" src="textures/high_texture7.jpg">
+			<img id="high8" src="textures/high_texture8.jpg">
+			<img id="high9" src="textures/high_texture9.jpg">
+			<img id="high10" src="textures/high_texture10.jpg">
+			<img id="high11" src="textures/high_texture11.jpg">
+			<img id="high12" src="textures/high_texture12.jpg">
+			<img id="high13" src="textures/high_texture13.jpg">
 		</a-assets>
 
 		<a-entity position="0 1.8 6">
@@ -30,8 +39,8 @@
 		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
 
 		<a-entity
-			geometry="primitive:torusKnot;p:5;q:3;radius:2;segmentsRadial:8" 
-			material="color:#8080FF" position="0 3 0" scale="2 2 2">
+			geometry="primitive:torusKnot;p:5;q:3;radius:1;segmentsRadial:8" 
+			material="src:#high13; color:#c0c0c0;" position="0 3 0" scale="1 1 1">
 			<a-animation dur="10000" attribute="geometry.q" to="5"></a-animation>
 			<a-animation delay="10000" dur="10000" attribute="geometry.p" to="3"></a-animation>
 		</a-entity>
@@ -43,15 +52,74 @@
 
 		<a-entity 
 			geometry="primitive: box;" 
-			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #high3;" position="0 13 0">
+			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #high3;" position="0 3 0">
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>	
 		</a-entity>
 		
 		<a-entity 
 			geometry="primitive: sphere;" 
-			material="color:#c0cFc0; src: #high4" position="10 13 0">
+			material="color:#c0cFc0; src: #high4" position="10 3 0">
+			<a-animation attribute="position" dur="25000" delay="10000" from="10 3 0" to="-10 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
 		</a-entity>
 
-		
+		<a-entity 
+			geometry="primitive: sphere;" 
+			material="color:#c0cFc0; src: #high5" position="-10 3 0">
+			<a-animation attribute="position" dur="25000" delay="10000" from="-10 3 0" to="10 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity
+			geometry="primitive: ring"
+			material="color: #c0cFc0; src: #high6" position="0 13 0">
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="360 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity
+			geometry="primitive: cone; radiusTop: 2"
+			material="color: #c0cFc0; src: #high7" position="-6 3 0">
+			<a-animation delay="20000" attribute="geometry.radiusTop" to="0.5" repeat="indefinite"></a-animation>
+			<a-animation attribute="position" dur="25000" delay="10000" from="-6 3 0" to="6 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation> 
+		<a-entity>
+
+		<a-entity
+			geometry="primitive: cone; radiusTop: 2"
+			material="color: #c0cFc0; src: #high8" position="6 3 0">
+			<a-animation delay="20000" attribute="geometry.radiusTop" to="0.5" repeat="indefinite"></a-animation>
+			<a-animation attribute="position" dur="25000" delay="10000" from="6 3 0" to="-6 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="360 0 0" repeat="indefinite"></a-animation> 
+		<a-entity>
+
+		<a-entity 
+			geometry="primitive: cylinder; height: 3; radius: 2"
+			material="color: #c0cFc0; src: #high9" position="20 13 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="4"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: dodecahedron; radius: 2"
+			material="color: #c0cFc0; src: #high10" position="-10 3 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="4"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="backwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: tetrahedron; radius: 2"
+			material="color: #c0cFc0; src: #high11" position="0 13 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="4"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: octahedron; radius: 2"
+			material="color: #c0cFc0; src: #high12" position="20 3 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="0.5"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="both" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
 
 		</a-scene>
 	</body>
