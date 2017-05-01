@@ -170,6 +170,115 @@
 						radius: .5,
 					})
 				})
+				var entityEl = document.createElement('a-entity');
+				sceneEl.appendChild(entityEl);
+					var radius = 10;
+					var entityBall = document.createElement('a-sphere');
+					entityBall.setAttribute('scale', {
+						x: 2,
+						y: 2,
+						z: 2
+					});
+					entityBall.setAttribute('position', {
+						x: generateRand(-28,28),
+						y: .8,
+						z: generateRand(-28,28),
+						radius: 10
+					});                                      
+					entityBall.setAttribute('light', {
+					    type: 'point',
+					    color: '#424242',
+						intensity: .1,
+						decay: 1
+					});
+					entityBall.addEventListener("mouseenter", function(d,i) {
+						entityBall.setAttribute('light', {
+						color: '#ffffff',
+						intensity: 1,						
+						});
+					})
+					sceneEl.appendChild(entityBall);
+					var entityBall2 = document.createElement('a-sphere');
+					entityBall2.setAttribute('scale', {
+						x: 2,
+						y: 2,
+						z: 2
+					});
+					entityBall2.setAttribute('position', {
+						x: generateRand(-28,28),
+						y: .8,
+						z: generateRand(-28,28),
+						radius: 10
+					});                                      
+					entityBall2.setAttribute('light', {
+					    type: 'point',
+					    color: '#424242',
+						intensity: .1,
+						decay: 1
+					});
+					entityBall2.addEventListener("mouseenter", function(d,i) {
+						entityBall2.setAttribute('light', {
+						color: '#ffffff',
+						intensity: 1,						
+						});
+					})
+					sceneEl.appendChild(entityBall2);
+					var entityBall3 = document.createElement('a-sphere');
+					entityBall3.setAttribute('scale', {
+						x: 2,
+						y: 2,
+						z: 2
+					});
+					entityBall3.setAttribute('position', {
+						x: generateRand(-28,28),
+						y: .8,
+						z: generateRand(-28,28),
+						radius: 10
+					});                                      
+					entityBall3.setAttribute('light', {
+					    type: 'point',
+					    color: '#424242',
+						intensity: .1,
+						decay: 1
+					});
+					entityBall3.addEventListener("mouseenter", function(d,i) {
+						entityBall3.setAttribute('light', {
+						color: '#ffffff',
+						intensity: 1,						
+						});
+					})
+					sceneEl.appendChild(entityBall3);
+					var entityBall4 = document.createElement('a-sphere');
+					entityBall4.setAttribute('scale', {
+						x: 2,
+						y: 2,
+						z: 2
+					});
+					entityBall2.setAttribute('position', {
+						x: generateRand(-28,28),
+						y: .8,
+						z: generateRand(-28,28),
+						radius: 10
+					});                                      
+					entityBall4.setAttribute('light', {
+					    type: 'point',
+					    color: '#424242',
+						intensity: .1,
+						decay: 1
+					});
+					entityBall4.addEventListener("mouseenter", function(d,i) {
+						entityBall4.setAttribute('light', {
+						color: '#ffffff',
+						intensity: 1,						
+						});
+					})
+					sceneEl.appendChild(entityBall4);
+					var entityBall5 = document.createElement('a-sphere');
+					entityBall5.setAttribute('scale', {
+						x: 2,
+						y: 2,
+						z: 2
+					});
 		</script>
 	</body>
 </html>
