@@ -16,13 +16,13 @@
 		<a-scene stats>
 		
 		<a-assets>
+			<!-- Free Tree Asset obtained from: http://tf3dm.com/3d-model/low-poly-tree-73217.html -->
+			<a-asset-item id="tree-obj" src="objects/tree.obj"></a-asset-item>
+			<a-asset-item id="tree-mtl" src="objects/tree.mtl"></a-asset-item>
 			<img id="sky" src="textures/sky.jpg">
 			<img id="ground" src="textures/ground.jpg">
 		</a-assets>
 		
-		<!-- Free Tree Asset obtained from: http://tf3dm.com/3d-model/low-poly-tree-73217.html -->
-		<a-asset-item id="tree-obj" src="objects/tree2.obj"></a-asset-item>
-		<a-asset-item id="tree-mtl" src="objects/tree.mtl"></a-asset-item>
 		<a-entity position="0 1.8 6">
 			<a-camera>
 				<a-cursor color="#4CC3D9"></a-cursor>
@@ -60,14 +60,14 @@
 						mtl: '#tree-mtl'
 					});
 					entityEl.setAttribute('scale', {
-						x: 1,
-						y: 1,
-						z: 1
+						x: 3,
+						y: 3,
+						z: 3
 					});
 					entityEl.setAttribute('position', {
-						x: 0,
-						y: 0,
-						z: 0
+						x: -3,
+						y: 5.6,
+						z: -3
 					});
 
 					sceneEl.appendChild(entityEl);
