@@ -22,12 +22,12 @@
 			<img id="high5" src="textures/high_texture5.jpg">
 			<img id="high6" src="textures/high_texture6.jpg">
 			<img id="high7" src="textures/high_texture7.jpg">
-			<img id="high8" src="textures/high_texture8.jpg">
+			<!-- <img id="high8" src="textures/high_texture8.jpg">
 			<img id="high9" src="textures/high_texture9.jpg">
 			<img id="high10" src="textures/high_texture10.jpg">
 			<img id="high11" src="textures/high_texture11.jpg">
 			<img id="high12" src="textures/high_texture12.jpg">
-			<img id="high13" src="textures/high_texture13.jpg">
+			<img id="high13" src="textures/high_texture13.jpg"> -->
 		</a-assets>
 
 		<a-entity position="0 1.8 6">
@@ -38,13 +38,6 @@
 
 		<a-sky height="2048" radius="30" src="#sky" theta-length="90" width="2048"></a-sky>
 
-		<a-entity
-			geometry="primitive:torusKnot;p:5;q:3;radius:1;segmentsRadial:8" 
-			material="src:#high13; color:#c0c0c0;" position="0 3 0" scale="1 1 1">
-			<a-animation dur="10000" attribute="geometry.q" to="5"></a-animation>
-			<a-animation delay="10000" dur="10000" attribute="geometry.p" to="3"></a-animation>
-		</a-entity>
-		
 		<a-entity
 			geometry="primitive: plane; width: 60; height: 60;"
 			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground2; repeat: 8 8" rotation="-90 0 0">
