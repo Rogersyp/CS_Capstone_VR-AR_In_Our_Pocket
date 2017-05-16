@@ -20,6 +20,18 @@
 		<a-assets>
 			<img id="sky" src="textures/sky.jpg">
 			<img id="ground" src="textures/leaves_ground.jpg">
+			<img id="ground2" src="textures/high_texture_ground.jpg"> 
+			<img id="high3" src="textures/high_texture3.jpg">
+			<img id="high4" src="textures/high_texture4.jpg">
+			<img id="high5" src="textures/high_texture5.jpg">
+			<img id="high6" src="textures/high_texture6.jpg">
+			<img id="high7" src="textures/high_texture7.jpg">
+			<img id="high8" src="textures/high_texture8.jpg">
+			<!-- <img id="high9" src="textures/high_texture9.jpg">
+			<img id="high10" src="textures/high_texture10.jpg">
+			<img id="high11" src="textures/high_texture11.jpg">
+			<img id="high12" src="textures/high_texture12.jpg">
+			<img id="high13" src="textures/high_texture13.jpg"> -->
 			<a-asset-item id="tree-obj" src="objects/tree2.obj"></a-asset-item>
 			<a-asset-item id="tree-mtl" src="objects/tree.mtl"></a-asset-item>
 		</a-assets>
@@ -38,10 +50,78 @@
 		</a-entity>
 
 		<a-entity
-			geometry="primitive:torusKnot;p:7;q:2;radius:2;segmentsRadial:8" 
-			material="color:#8080FF" position="0 13 0" scale="2 2 2">
-			<a-animation dur="10000" attribute="geometry.q" to="7"></a-animation>
-			<a-animation delay="10000" dur="10000" attribute="geometry.p" to="2"></a-animation>
+			geometry="primitive: plane; width: 60; height: 60;"
+			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #ground2; repeat: 8 8" rotation="-90 0 0">
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: box;" 
+			material="color:#c0c0c0; flatShading: true; shader: standard; side: front; src: #high3;" position="0 3 0">
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>	
+		</a-entity>
+		
+		<a-entity 
+			geometry="primitive: sphere;" 
+			material="color:#c0cFc0; src: #high4" position="10 3 0">
+			<a-animation attribute="position" dur="25000" delay="10000" from="10 3 0" to="-10 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: sphere;" 
+			material="color:#c0cFc0; src: #high5" position="-10 3 0">
+			<a-animation attribute="position" dur="25000" delay="10000" from="-10 3 0" to="10 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity
+			geometry="primitive: ring"
+			material="color: #c0cFc0; src: #high6" position="0 13 0">
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="360 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity
+			geometry="primitive: cone; radiusTop: 2"
+			material="color: #c0cFc0; src: #high7" position="-6 3 0">
+			<a-animation delay="20000" attribute="geometry.radiusTop" to="0.5" repeat="indefinite"></a-animation>
+			<a-animation attribute="position" dur="25000" delay="10000" from="-6 3 0" to="6 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation> 
+		<a-entity>
+
+		<a-entity
+			geometry="primitive: cone; radiusTop: 2"
+			material="color: #c0cFc0; src: #high8" position="6 3 0">
+			<a-animation delay="20000" attribute="geometry.radiusTop" to="0.5" repeat="indefinite"></a-animation>
+			<a-animation attribute="position" dur="25000" delay="10000" from="6 3 0" to="-6 3 0"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="360 0 0" repeat="indefinite"></a-animation> 
+		<a-entity>
+
+		<a-entity 
+			geometry="primitive: cylinder; height: 3; radius: 2"
+			material="color: #c0cFc0; src: #high9" position="20 13 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="4"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: dodecahedron; radius: 2"
+			material="color: #c0cFc0; src: #high10" position="-10 3 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="4"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="backwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: tetrahedron; radius: 2"
+			material="color: #c0cFc0; src: #high11" position="0 13 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="4"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+		</a-entity>
+
+		<a-entity 
+			geometry="primitive: octahedron; radius: 2"
+			material="color: #c0cFc0; src: #high12" position="20 3 0">
+			<a-animation delay="25000" attribute="geometry.radius" to="0.5"></a-animation>
+			<a-animation attribute="rotation" dur="10000" fill="both" to="0 360 0" repeat="indefinite"></a-animation>
 		</a-entity>
 
 
@@ -54,122 +134,381 @@
 
 		</a-scene>
 		
-		<script>
-
-			/*AFRAME.registerComponent('collider-check', {
-			  dependencies: ['raycaster'],
-			  init: function () {
-			    this.el.addEventListener('raycaster-intersected', function () {
-			      console.log('Player hit something!');
-			    });
-			  }
-			});
-			*/
+		 <script>
+			var data = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		 
 			var sceneEl = document.querySelector('a-scene');
-			
+					
 			if (sceneEl.hasLoaded) {
 				addElements();
-				doAnimations();
 			} else {
-				sceneEl.addEventListener('loaded', addElements);
-				sceneEl.addEventListener('animated', doAnimations);
+			sceneEl.addEventListener('loaded', addElements);
 			}
-			
+				
 			function generateRand(min, max) {
 				return Math.floor(Math.random() * (max - min) + min);
 			}
-			
 			function addElements () {
-				for (i = 0; i < 50; i++) { 
-					var entityEl = document.createElement('a-entity');
-					entityEl.setAttribute('obj-model', {
-						obj: '#tree-obj',
-						mtl: '#tree-mtl'
-					});
-					entityEl.setAttribute('scale', {
-						x: 2,
-						y: 2,
-						z: 2
-					});
-					entityEl.setAttribute('position', {
-						x: generateRand(-28,28),
-						y: 3.8,
-						z: generateRand(-28,28)
-					});
-                                        
-					//entityEl.setAttribute('light', {
-					 //       type: 'point',
-					   //     color: '#424242',
-						 //   intensity: .1                                       
-					//});
-                                         
-					sceneEl.appendChild(entityEl);
-				}
-				
-			};
-				
-			function doAnimations () {
-			//var
 			
+			/*AFRAME.registerComponent('collider-check', {
+					  dependencies: ['raycaster'],
+					  init: function () {
+						this.el.addEventListener('raycaster-intersected', function () {
+						  console.log('Player hit something!');
+						});
+					  }
+					});
+			*/
+	
+			for (i = 0; i < 15; i++) { 
+				var entityEl = document.createElement('a-entity');
+				entityEl.setAttribute('obj-model', {
+					obj: '#tree-obj',
+					mtl: '#tree-mtl'
+				});
+				entityEl.setAttribute('scale', {
+					x: .5,
+					y: .5,
+					z: .5
+				});
+				entityEl.setAttribute('position', {
+					x: generateRand(-25,25),
+					y: 0,
+					z: generateRand(-25,25)
+				});
+									
+				   // entityEl.setAttribute('light', {
+				   //         type: 'point',
+				   //         color: '#424242',
+				   //         intensity: .8                                      
+				   // });
+									 
+				sceneEl.appendChild(entityEl);
 			}
+	
+
+			sceneEl.appendChild(entityEl);
+			var radius = 10;
+			var entityBall = document.createElement('a-sphere');
+			entityBall.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall.setAttribute('position', {
+				x: radius * Math.cos(1/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(1/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall.addEventListener("mouseenter", function(d,i) {
+				entityBall.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall);
+			var entityBall2 = document.createElement('a-sphere');
+			entityBall2.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
 			
-			var data = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+			entityBall2.setAttribute('position', {
+				x: radius * Math.cos(2/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(2/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall2.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall2.addEventListener("mouseenter", function(d,i) {
+				entityBall2.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall2);
+			var entityBall3 = document.createElement('a-sphere');
+			entityBall3.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall3.setAttribute('position', {
+				x: radius * Math.cos(3/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(3/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall3.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall3.addEventListener("mouseenter", function(d,i) {
+				entityBall3.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall3);
+			var entityBall4 = document.createElement('a-sphere');
+			entityBall4.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall2.setAttribute('position', {
+				x: radius * Math.cos(4/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(4/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall4.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall4.addEventListener("mouseenter", function(d,i) {
+				entityBall4.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall4);
+			var entityBall5 = document.createElement('a-sphere');
+			entityBall5.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall5.setAttribute('position', {
+				x: radius * Math.cos(5/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(5/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall5.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall5.addEventListener("mouseenter", function(d,i) {
+				entityBall5.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall5);
+			var entityBall6 = document.createElement('a-sphere');
+			entityBall6.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall6.setAttribute('position', {
+				x: radius * Math.cos(6/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(6/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall6.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall6.addEventListener("mouseenter", function(d,i) {
+				entityBall6.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall6);
+		//}
+			var entityBall7 = document.createElement('a-sphere');
+			entityBall7.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall7.setAttribute('position', {
+				x: radius * Math.cos(7/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(7/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall7.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall7.addEventListener("mouseenter", function(d,i) {
+				entityBall7.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall7);
+		//}
+			var entityBall8 = document.createElement('a-sphere');
+			entityBall8.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall8.setAttribute('position', {
+				x: radius * Math.cos(8/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(8/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall6.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall8.addEventListener("mouseenter", function(d,i) {
+				entityBall8.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall8);
+		//}
+			var entityBall9 = document.createElement('a-sphere');
+			entityBall9.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall6.setAttribute('position', {
+				x: radius * Math.cos(9/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(9/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall9.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall9.addEventListener("mouseenter", function(d,i) {
+				entityBall9.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall9);
+		//}
+			var entityBall10 = document.createElement('a-sphere');
+			entityBall10.setAttribute('scale', {
+				x: 2,
+				y: 2,
+				z: 2
+			});
+			entityBall6.setAttribute('position', {
+				x: radius * Math.cos(10/10 * 2 * Math.PI),
+				y: 15,
+				z: radius * Math.sin(10/10 * 2 * Math.PI),
+				radius: 10
+			});                                      
+			entityBall10.setAttribute('light', {
+				type: 'point',
+				color: '#424242',
+				intensity: 0,
+				decay: 1
+			});
+			entityBall10.addEventListener("mouseenter", function(d,i) {
+				entityBall10.setAttribute('light', {
+				color: '#ffffff',
+				intensity: 1,						
+				});
+			})
+			sceneEl.appendChild(entityBall10);
+		//}
+		
+	};
   
-			var hscale = d3.scale.linear()
-				.domain([0, d3.max(data)])
-				.range([0, 3])
+
+/**   
+    var data = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  
+    var hscale = d3.scale.linear()
+    	.domain([0, d3.max(data)])
+    	.range([0, 3])
     
-			var scene = d3.select("a-scene")
-			//https://github.com/d3/d3/blob/master/API.md
-			// we use d3's enter/update/exit pattern to draw and bind our dom elements
-			var circles = scene.selectAll("a-sphere.circles").data(data)
-			circles.enter().append("a-sphere").classed("circles", true)
-			//https://bl.ocks.org/enjalot/8be32e6f1f32920ba841
-			
-			circles.attr({
-				position: function(d,i) {
-					var y = 15;
-					var radius = 15;
-					var x = radius * Math.cos(i/data.length * 2 * Math.PI)
-					var z = radius * Math.sin(i/data.length * 2 * Math.PI)
-					return x + " " + y + " " + z
-				},
-				rotation: function(d,i) {
-					var x = 0;
-					var z = 0;
-					var y = 0;
-					//-(i/data.length)*360 not circle
-					return x + " " + y + " " + z
-				},
-					radius: function(d) { return hscale(d)},
-					depth: function(d) { return 0.9},
-					height: function(d) { return 20},
-					opacity: function(d,i) { return 0.6 + (i/data.length) * 0.4},
-				})
-				.on("click", function(d,i) {
-					console.log("click", i,d)
-					//do something
-				})
-				.on("mouseenter", function(d,i) {
-					if(this.hovering) return;
-					console.log("hover", i,d)
-					this.hovering = true;
-					d3.select(this).transition().duration(1000)
-					.attr({
-						metalness: 0.5,
-						radius: 2,
-						//rotation: 0 + " " + 100 + " " + 0
-					})
-				})
-				.on("mouseleave", function(d,i) {
-					console.log("leave",i,d)
-					this.hovering = false;
-					d3.select(this).transition()
-					.attr({
-						metalness: 0,
-						radius: .5,
-					})
-				})
-		</script>
+    var scene = d3.select("a-scene")
+    //https://github.com/d3/d3/blob/master/API.md
+    // we use d3's enter/update/exit pattern to draw and bind our dom elements
+    var circles = scene.selectAll("a-sphere.circles").data(data)
+    circles.enter().append("a-sphere").classed("circles", true)
+	//https://bl.ocks.org/enjalot/8be32e6f1f32920ba841
+    circles.attr({
+      position: function(d,i) {
+        var y = 1 + hscale(d)/2;
+        var radius = 10;
+        var x = radius * Math.cos(i/data.length * 2 * Math.PI)
+        var z = radius * Math.sin(i/data.length * 2 * Math.PI)
+
+        return x + " " + y + " " + z
+      },
+      rotation: function(d,i) {
+        var x = 0;
+        var z = 0;
+        var y = 0;
+		//-(i/data.length)*360 not circle
+        return x + " " + y + " " + z
+      },
+      radius: function(d) { return hscale(d)},
+      depth: function(d) { return 0.9},
+      height: function(d) { return 20},
+      opacity: function(d,i) { return 0.6 + (i/data.length) * 0.4},
+    })
+    .on("click", function(d,i) {
+      console.log("click", i,d)
+	  //do something
+    })
+    .on("mouseenter", function(d,i) {
+      if(this.hovering) return;
+      console.log("hover", i,d)
+      this.hovering = true;
+      d3.select(this).transition().duration(1000)
+      .attr({
+        metalness: 0.5,
+        radius: 2,
+		//rotation: 0 + " " + 100 + " " + 0
+      })
+    })
+    .on("mouseleave", function(d,i) {
+      console.log("leave",i,d)
+      this.hovering = false;
+      d3.select(this).transition()
+      .attr({
+        metalness: 0,
+        radius: .5,
+      })
+    })    
+**/   
+  </script>
+
 	</body>
 </html>
